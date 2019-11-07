@@ -1,0 +1,26 @@
+<h1>Bewerk <%= anatomy.id %></h1>
+
+<form method="post" action="/anatomies/update/<% anatomy.id %>">
+    <div class="form-group">
+        <label for="height">Lengte</label>
+        <input type="number" name="height" class="form-control" step="0.01" value="<%= anatomy.height %>" />
+    </div>
+
+    <div class="form-group">
+        <label for="weight">Gewicht</label>
+        <input type="number" name="weight" class="form-control" step="0.01" value="<%= anatomy.weight %>" />
+    </div>
+
+    <div class="form-group">
+        <label for="bmi">BMI</label>
+        <input type="number" name="bmi" class="form-control" step="0.01" value="<%= anatomy.bmi %>" />
+    </div>
+
+    <div class="form-group">
+        <label for="fat">Vetpercentage</label>
+        <input type="number" name="fat" class="form-control" step="0.01" value="<%= anatomy.fat %>" />
+    </div>
+
+    <input type="submit" value="Opslaan" class="btn btn-primary" />
+
+</form>

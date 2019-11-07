@@ -1,0 +1,34 @@
+<h1 class="display-4">Testresultaten</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Naam</th>
+            <th>Lengte</th>
+            <th>Gewicht</th>
+            <th>BMI</th>
+            <th>Vet %</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% anatomies.forEach(anatomy => { %>
+
+            <tr>
+                <td><%= anatomy.name %></td>
+                <td><%= anatomy.height %></td>
+                <td><%= anatomy.weight %></td>
+                <td><%= anatomy.bmi %></td>
+                <td><%= anatomy.fat %></td>
+                <td>
+                    <a href="/result/<%= anatomy.id %>" class="btn btn-light">Bekijken</a>
+                    <a href="/anatomies/edit/<%= anatomy.id %>" class="btn btn-primary">Bewerken</a>
+                    <form class="d-inline" action="/anatomies/delete" method="post">
+                        <input type="hidden" name="id" value="<%= anatomy.id%>">
+                        <input type="submit" value="Verwijder" class="btn btn-danger" />
+                    </form>
+                </td>
+            </tr>
+
+        <% }) %>
+    </tbody>
+</table>

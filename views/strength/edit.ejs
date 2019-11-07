@@ -1,0 +1,36 @@
+<h1>Bewerk <%= strength.id %></h1>
+
+<form method="post" action="/anatomies/update/<% strength.id %>">
+    <div class="form-group">
+        <label for="shoulderPressReps">Shoulder Press herhalingen</label>
+        <input type="number" name="shoulderPressReps" class="form-control" value="<%= strength.shoulderPressReps %>" />
+    </div>
+
+    <div class="form-group">
+        <label for="shoulderPressWeight">Shoulder Press gewicht</label>
+        <input type="number" name="shoulderPressWeight" class="form-control" value="<%= strength.shoulderPressWeight %>" />
+    </div>
+
+    <div class="form-group">
+        <label for="squatReps">Squat herhalingen</label>
+        <input type="number" name="squatReps" class="form-control" value="<%= strength.squatReps %>" />
+    </div>
+
+    <div class="form-group">
+        <label for="squatWeight">Squat gewicht</label>
+        <input type="number" name="squatWeight" class="form-control" value="<%= strength.squatWeight %>" />
+    </div>
+
+    <div class="form-group">
+        <label for="pullUpReps">Pull up herhalingen</label>
+        <input type="number" name="pullUpReps" class="form-control" value="<%= strength.pullUpReps %>" />
+    </div>
+
+    <div class="form-group">
+        <label for="coreStability">Core Stabiliteit</label>
+        <input type="number" name="coreStability" class="form-control" step="0.01" value="<%= strength.coreStability %>" />
+    </div>
+
+    <input type="submit" value="Opslaan" class="btn btn-primary" />
+
+</form>

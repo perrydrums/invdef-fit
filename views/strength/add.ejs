@@ -1,0 +1,40 @@
+<h1>Strength resultaten voor <%= anatomy.name %></h1>
+<code>ID: <%= anatomy.id%></code>
+<hr class="mb-5">
+
+<form method="post" action="/strength/create">
+    <input type="hidden" value="<%= anatomy.id %>" name="anatomyId" />
+
+    <div class="form-group">
+        <label for="shoulderPressReps">Shoulder Press herhalingen</label>
+        <input type="number" name="shoulderPressReps" class="form-control" step="0.01" />
+    </div>
+
+    <div class="form-group">
+        <label for="shoulderPressWeight">Shoulder Press gewicht</label>
+        <input type="number" name="shoulderPressWeight" class="form-control" step="0.01" />
+    </div>
+
+    <div class="form-group">
+        <label for="squatReps">Squat herhalingen</label>
+        <input type="number" name="squatReps" class="form-control" step="0.01" />
+    </div>
+
+    <div class="form-group">
+        <label for="squatWeight">Squat gewicht</label>
+        <input type="number" name="squatWeight" class="form-control" step="0.01" />
+    </div>
+
+    <div class="form-group">
+        <label for="pullUpReps">Pull up herhalingen</label>
+        <input type="number" name="pullUpReps" class="form-control" step="0.01" />
+    </div>
+
+    <div class="form-group">
+        <label for="coreStability">Core Stabiliteit</label>
+        <input type="number" name="coreStability" class="form-control" step="0.01" />
+    </div>
+
+    <input type="submit" value="Opslaan" class="btn btn-primary" />
+
+</form>

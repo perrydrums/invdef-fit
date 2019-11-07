@@ -1,0 +1,30 @@
+<form method="post" action="/anatomies/create">
+
+    <div class="form-group">
+        <label for="name">Naam</label>
+        <input type="text" name="name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="height">Lengte</label>
+        <input type="number" name="height" class="form-control" step="0.01" />
+    </div>
+
+    <div class="form-group">
+        <label for="weight">Gewicht</label>
+        <input type="number" name="weight" class="form-control" step="0.01" />
+    </div>
+
+    <div class="form-group">
+        <label for="bmi">BMI</label>
+        <input type="number" name="bmi" class="form-control" step="0.01" />
+    </div>
+
+    <div class="form-group">
+        <label for="fat">Vetpercentage</label>
+        <input type="number" name="fat" class="form-control" step="0.01" />
+    </div>
+
+    <input type="submit" value="Opslaan" class="btn btn-primary" />
+
+</form>
