@@ -1,6 +1,8 @@
 <h1>Bewerk <%= strength.id %></h1>
 
-<form method="post" action="/strength/update/<% strength.id %>">
+<form method="post" action="/strength/update/<%= strength.id %>">
+    <input type="hidden" value="<%= strength.anatomyId %>" name="anatomyId" />
+
     <div class="form-group">
         <label for="shoulderPressReps">Shoulder Press herhalingen</label>
         <input type="number" name="shoulderPressReps" class="form-control" value="<%= strength.shoulderPressReps %>" />

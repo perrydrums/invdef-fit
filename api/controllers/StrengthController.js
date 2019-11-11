@@ -63,6 +63,8 @@ module.exports = {
   },
 
   update: (req, res) => {
+    const id = req.body.anatomyId;
+
     Strength.update({ id: req.param('id') }, {
       anatomyId: req.body.anatomyId,
       shoulderPressReps: req.body.shoulderPressReps,
@@ -75,7 +77,7 @@ module.exports = {
       if (err) {
         res.send(500, {error: 'Database error'});
       }
-      res.redirect('/strength/list');
+      res.redirect('/result/' + id);
     });
   }
 

@@ -18,6 +18,6 @@ module.exports.routes = {
 
   'GET /strength/add/:id': 'StrengthController.add',
   'GET /strength/edit/:id': 'StrengthController.edit',
-  'POST /v/update/:id': 'StrengthController.update',
+  'POST /strength/update/:id': 'StrengthController.update',
 
 };

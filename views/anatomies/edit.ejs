@@ -1,6 +1,6 @@
 <h1>Bewerk <%= anatomy.id %></h1>
 
-<form method="post" action="/anatomies/update/<% anatomy.id %>">
+<form method="post" action="/anatomies/update/<%= anatomy.id %>">
     <div class="form-group">
         <label for="height">Lengte</label>
         <input type="number" name="height" class="form-control" step="0.01" value="<%= anatomy.height %>" />

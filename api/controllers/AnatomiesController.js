@@ -75,7 +75,9 @@ module.exports = {
   },
 
   update: (req, res) => {
-    Anatomies.update({ id: req.param('id') }, {
+    const id = req.param('id');
+
+    Anatomies.update({ id }, {
       name: req.body.name,
       height: req.body.height,
       weight: req.body.weight,
@@ -85,7 +87,7 @@ module.exports = {
       if (err) {
         return res.send(500, {error: 'Database error'});
       }
-      return res.redirect('/anatomies/list');
+      return res.redirect('/result/' + id);
     });
   }
 
