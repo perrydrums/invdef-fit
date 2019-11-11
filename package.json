@@ -8,15 +8,20 @@
     "@sailshq/connect-redis": "^3.2.1",
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
+    "bootstrap": "^4.3.1",
     "grunt": "1.0.4",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
     "sails": "^1.2.3",
     "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^2.1.1",
     "sails-hook-sockets": "^2.0.0",
-    "sails-mongo": "^1.0.1"
+    "sails-mysql": "^1.0.1"
   },
   "devDependencies": {
-    "eslint": "5.16.0"
+    "eslint": "5.16.0",
+    "grunt-sass": "^3.1.0",
+    "node-sass": "^4.13.0"
   },
   "scripts": {
     "start": "nodemon app.js",

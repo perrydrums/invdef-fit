@@ -33,8 +33,8 @@ module.exports.datastores = {
   ***************************************************************************/
 
   default: {
-    adapter: 'sails-mongo',
-    url: 'mongodb://root@localhost/invdef-fit'
+    adapter: 'sails-mysql',
+    url: 'mysql://root:root@127.0.0.1:3306/invdef-fit',
   },
 
 

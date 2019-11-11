@@ -12,8 +12,6 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
 
-  'GET /edit/:id': 'BaseController.edit',
-
   'GET /result/:id': 'AnatomiesController.view',
   'GET /anatomies/edit/:id': 'AnatomiesController.edit',
   'POST /anatomies/update/:id': 'AnatomiesController.update',

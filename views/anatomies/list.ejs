@@ -20,8 +20,7 @@
                 <td><%= anatomy.bmi %></td>
                 <td><%= anatomy.fat %></td>
                 <td>
-                    <a href="/result/<%= anatomy.id %>" class="btn btn-light">Bekijken</a>
-                    <a href="/anatomies/edit/<%= anatomy.id %>" class="btn btn-primary">Bewerken</a>
+                    <a href="/result/<%= anatomy.id %>" class="btn btn-primary">Bekijken</a>
                     <form class="d-inline" action="/anatomies/delete" method="post">
                         <input type="hidden" name="id" value="<%= anatomy.id%>">
                         <input type="submit" value="Verwijder" class="btn btn-danger" />
