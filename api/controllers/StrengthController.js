@@ -54,11 +54,14 @@ module.exports = {
   },
 
   edit: (req, res) => {
-    Strength.findOne({id: req.param('id')}).exec((err, strength) => {
+    Strength.findOne({id: req.param('id')}).exec(async (err, strength) => {
       if (err) {
         res.send(500, {error: 'Database error'});
       }
-      res.view('strength/edit', { strength });
+
+      const anatomy = await Anatomies.findOne({ id: strength.anatomyId }).catch(() => { return null; });
+
+      res.view('strength/edit', { strength, anatomy });
     });
   },
 

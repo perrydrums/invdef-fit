@@ -1,4 +1,6 @@
-<h1>Bewerk <%= strength.id %></h1>
+<h1>Bewerk strength resultaten voor [<%= anatomy.name %>]</h1>
+<code>ID: <%= anatomy.id%></code>
+<hr class="mb-5">
 
 <form method="post" action="/strength/update/<%= strength.id %>">
     <input type="hidden" value="<%= strength.anatomyId %>" name="anatomyId" />

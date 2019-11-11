@@ -1,4 +1,6 @@
-<h1>Bewerk <%= anatomy.id %></h1>
+<h1>Bewerk [<%= anatomy.name %>]</h1>
+<code>ID: <%= anatomy.id%></code>
+<hr class="mb-5">
 
 <form method="post" action="/anatomies/update/<%= anatomy.id %>">
     <div class="form-group">
