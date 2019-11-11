@@ -64,6 +64,11 @@
                     <td><%= strength.coreStability %></td>
                 </tr>
             </table>
+        <% } else { %>
+            <div class="mb-4 d-flex">
+                <h2>Krachttraining</h2>
+                <h2 class="ml-auto"><a href="/strength/add/<%= anatomy.id %>" class="btn btn-primary">Toevoegen</a></h2>
+            </div>
         <% } %>
     </div>
 </div>
