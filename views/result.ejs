@@ -1,5 +1,5 @@
 <h1>Resultaten van <%= anatomy.name%></h1>
-<code>ID: <%= anatomy.id%></code>
+<code>Peoplesoft ID: <%= anatomy.peoplesoft%></code>
 <hr class="mb-4">
 
 <div class="row">
@@ -12,15 +12,27 @@
         <table class="table table-striped">
             <tr>
                 <td>Naam</td>
-                <td><%= anatomy.name %></td>
+                <td><%= anatomy.firstName + ' ' + anatomy.lastName %></td>
+            </tr>
+            <tr>
+                <td>Eenheid</td>
+                <td><%= anatomy.unit %></td>
+            </tr>
+            <tr>
+                <td>Peloton</td>
+                <td><%= anatomy.platoon %></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Lengte</td>
-                <td><%= anatomy.height %></td>
+                <td><%= anatomy.height %> cm</td>
             </tr>
             <tr>
                 <td>Gewicht</td>
-                <td><%= anatomy.weight %></td>
+                <td><%= anatomy.weight %> kg</td>
             </tr>
             <tr>
                 <td>BMI</td>
@@ -28,7 +40,7 @@
             </tr>
             <tr>
                 <td>Vetpercentage</td>
-                <td><%= anatomy.fat %></td>
+                <td><%= anatomy.fat %>%</td>
             </tr>
         </table>
     </div>

@@ -3,6 +3,7 @@
     <thead>
         <tr>
             <th>Naam</th>
+            <th>Peloton</th>
             <th>Lengte</th>
             <th>Gewicht</th>
             <th>BMI</th>
@@ -14,7 +15,8 @@
         <% anatomies.forEach(anatomy => { %>
 
             <tr>
-                <td><%= anatomy.name %></td>
+                <td><%= anatomy.firstName + ' ' + anatomy.lastName %></td>
+                <td><%= anatomy.platoon %></td>
                 <td><%= anatomy.height %></td>
                 <td><%= anatomy.weight %></td>
                 <td><%= anatomy.bmi %></td>

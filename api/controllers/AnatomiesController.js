@@ -36,7 +36,11 @@ module.exports = {
 
   create: (req, res) => {
     Anatomies.create({
-      name: req.body.name,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      unit: req.body.unit,
+      platoon: req.body.platoon,
+      peoplesoft: req.body.peoplesoft,
       height: req.body.height,
       weight: req.body.weight,
       bmi: req.body.bmi,
@@ -81,7 +85,11 @@ module.exports = {
     const id = req.param('id');
 
     Anatomies.update({ id }, {
-      name: req.body.name,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      unit: req.body.unit,
+      platoon: req.body.platoon,
+      peoplesoft: req.body.peoplesoft,
       height: req.body.height,
       weight: req.body.weight,
       bmi: req.body.bmi,

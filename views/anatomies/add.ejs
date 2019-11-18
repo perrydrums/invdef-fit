@@ -1,23 +1,45 @@
 <form method="post" action="/anatomies/create">
 
     <div class="form-group">
-        <label for="name">Naam</label>
-        <input type="text" name="name" class="form-control" />
+        <label for="firstName">Voornaam</label>
+        <input type="text" name="firstName" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label for="height">Lengte</label>
-        <input type="number" name="height" class="form-control" step="0.01" />
+        <label for="lastName">Achternaam</label>
+        <input type="text" name="lastName" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label for="weight">Gewicht</label>
-        <input type="number" name="weight" class="form-control" step="0.01" />
+        <label for="unit">Eenheid</label>
+        <input type="text" name="unit" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="platoon">Peloton</label>
+        <input type="text" name="platoon" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="peoplesoft">Peoplesoft nummer</label>
+        <input type="text" name="peoplesoft" class="form-control" />
+    </div>
+
+    <hr/>
+
+    <div class="form-group">
+        <label for="height">Lengte (in cm)</label>
+        <input type="number" name="height" class="form-control" step="0.01" id="height"  />
+    </div>
+
+    <div class="form-group">
+        <label for="weight">Gewicht (in kg)</label>
+        <input type="number" name="weight" class="form-control" step="0.01" id="weight" />
     </div>
 
     <div class="form-group">
         <label for="bmi">BMI</label>
-        <input type="number" name="bmi" class="form-control" step="0.01" />
+        <input type="number" name="bmi" class="form-control" step="0.01" id="bmi" readonly />
     </div>
 
     <div class="form-group">
@@ -28,3 +50,23 @@
     <input type="submit" value="Opslaan" class="btn btn-primary" />
 
 </form>
+
+<script>
+  const updateBmi = () => {
+    const weight = document.getElementById('weight').value || null;
+    const height = document.getElementById('height').value || null;
+
+    if (weight && height) {
+      document.getElementById('bmi').value = (weight / ((height / 100) * (height / 100))).toFixed(2);
+    }
+    else {
+      document.getElementById('bmi').value = null;
+    }
+  };
+
+  const weightElement = document.getElementById('weight');
+  const heightElement = document.getElementById('height');
+
+  document.getElementById('weight').addEventListener('input', updateBmi);
+  document.getElementById('height').addEventListener('input', updateBmi);
+</script>

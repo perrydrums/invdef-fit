@@ -8,7 +8,19 @@
 module.exports = {
 
   attributes: {
-    name: {
+    firstName: {
+      type: 'string',
+    },
+    lastName: {
+      type: 'string',
+    },
+    unit: {
+      type: 'string',
+    },
+    platoon: {
+      type: 'string',
+    },
+    peoplesoft: {
       type: 'string',
     },
     height: {
