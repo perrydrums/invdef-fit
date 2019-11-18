@@ -1,0 +1,29 @@
+<h1 class="display-4">Formules</h1>
+<a href="/admin/formulas/add" class="btn btn-success mb-4">Nieuwe formule</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Veld</th>
+            <th>Formule</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% formulas.forEach(formula => { %>
+
+            <tr>
+                <td><%= formula.field %></td>
+                <td><%= formula.formula %></td>
+                <td>
+                    <a href="/admin/formulas/edit/<%= formula.id %>" class="btn btn-primary">Bewerken</a>
+                    <form class="d-inline" action="/formulas/delete" method="post">
+                        <input type="hidden" name="id" value="<%= formula.id%>">
+                        <input type="submit" value="Verwijder" class="btn btn-danger" />
+                    </form>
+                </td>
+            </tr>
+
+        <% }) %>
+    </tbody>
+</table>

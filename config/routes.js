@@ -22,4 +22,9 @@ module.exports.routes = {
   'GET /strength/edit/:id': 'StrengthController.edit',
   'POST /strength/update/:id': 'StrengthController.update',
 
+  'GET /admin/formulas': 'FormulasController.list',
+  'GET /admin/formulas/add': 'FormulasController.add',
+  'GET /admin/formulas/edit/:id': 'FormulasController.edit',
+  'POST /admin/formulas/update/:id': 'FormulasController.update',
+
 };
