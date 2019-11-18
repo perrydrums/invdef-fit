@@ -53,23 +53,3 @@
     <input type="submit" value="Opslaan" class="btn btn-primary" />
 
 </form>
-
-<script>
-  const updateBmi = () => {
-    const weight = document.getElementById('weight').value || null;
-    const height = document.getElementById('height').value || null;
-
-    if (weight && height) {
-      document.getElementById('bmi').value = (weight / ((height / 100) * (height / 100))).toFixed(2);
-    }
-    else {
-      document.getElementById('bmi').value = null;
-    }
-  };
-
-  const weightElement = document.getElementById('weight');
-  const heightElement = document.getElementById('height');
-
-  document.getElementById('weight').addEventListener('input', updateBmi);
-  document.getElementById('height').addEventListener('input', updateBmi);
-</script>
