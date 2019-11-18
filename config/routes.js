@@ -26,5 +26,6 @@ module.exports.routes = {
   'GET /admin/formulas/add': 'FormulasController.add',
   'GET /admin/formulas/edit/:id': 'FormulasController.edit',
   'POST /admin/formulas/update/:id': 'FormulasController.update',
+  'POST /formulas/solve': 'FormulasController.solve',
 
 };

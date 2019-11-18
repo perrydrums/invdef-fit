@@ -5,6 +5,8 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
+const formulaEx = require('excel-formula');
+
 module.exports = {
 
   list: (req, res) => {
@@ -64,6 +66,16 @@ module.exports = {
       }
       return res.redirect('/admin/formulas');
     });
+  },
+
+  solve: (req, res) => {
+    try {
+      const value = eval(formulaEx.toJavaScript(req.body.formula));
+      return res.send({value});
+    }
+    catch (e) {
+      return res.send({error: e.message});
+    }
   }
 
 };
