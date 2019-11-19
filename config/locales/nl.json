@@ -1,0 +1,5 @@
+{
+	"info:formulas:field": "Kies het veld dat gevuld wordt door de formule.",
+	"info:formulas:formula": "Vul hier de Excel formule in.",
+  "info:formulas:readonly": "De waarde van dit veld wordt berekend door een formule."
+}

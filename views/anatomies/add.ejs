@@ -1,3 +1,6 @@
+<h1>Nieuw resultaat toevoegen</h1>
+<hr class="mb-5">
+
 <form method="post" action="/anatomies/create" class="mb-5">
 
     <div class="form-group">
@@ -39,6 +42,7 @@
 
     <div class="form-group">
         <label for="bmi">BMI</label>
+        <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:formulas:readonly') %>"></div>
         <input type="number" name="bmi" class="form-control" step="0.01" id="bmi" readonly />
     </div>
 
