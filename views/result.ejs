@@ -51,30 +51,45 @@
                 <h2 class="ml-auto"><a href="/strength/edit/<%= strength.id %>" class="btn btn-primary">Bewerken</a></h2>
             </div>
             <table class="table table-striped">
+                <thead class="thead-dark">
                 <tr>
-                    <td>Shoulder Press herhalingen</td>
+                    <th></th>
+                    <th>Herh.</th>
+                    <th>KG</th>
+                    <th>Resultaat</th>
+                    <th>Score</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Shoulder Press</td>
                     <td><%= strength.shoulderPressReps %></td>
-                </tr>
-                <tr>
-                    <td>Shoulder Press KG</td>
                     <td><%= strength.shoulderPressWeight %></td>
+                    <td><%= strength.shoulderPressReps * strength.shoulderPressWeight %></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>Squat herhalingen</td>
+                    <td>Squat</td>
                     <td><%= strength.squatReps %></td>
-                </tr>
-                <tr>
-                    <td>Squat KG</td>
                     <td><%= strength.squatWeight %></td>
+                    <td><%= strength.squatReps * strength.squatWeight %></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>Pull Up herhalingen</td>
+                    <td>Pull Up</td>
                     <td><%= strength.pullUpReps %></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Stabiliteit</td>
+                    <td></td>
+                    <td></td>
                     <td><%= strength.coreStability %></td>
+                    <td></td>
                 </tr>
+                </tbody>
             </table>
         <% } else { %>
             <div class="mb-4 d-flex">
