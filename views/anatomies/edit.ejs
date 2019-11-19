@@ -1,8 +1,8 @@
-<h1>Bewerk [<%= anatomy.firstName + ' ' + anatomy.lastName %>]</h1>
+<h1>Bewerk <b><%= anatomy.firstName + ' ' + anatomy.lastName%></b></h1>
 <code>Peoplesoft ID: <%= anatomy.peoplesoft%></code>
 <hr class="mb-5">
 
-<form method="post" action="/anatomies/update/<%= anatomy.id %>">
+<form method="post" action="/anatomies/update/<%= anatomy.id %>" class="mb-5">
     <div class="form-group">
         <label for="firstName">Voornaam</label>
         <input type="text" name="firstName" class="form-control" value="<%= anatomy.firstName %>" />

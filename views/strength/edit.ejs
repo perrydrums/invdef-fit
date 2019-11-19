@@ -1,8 +1,8 @@
-<h1>Bewerk strength resultaten voor [<%= anatomy.name %>]</h1>
+<h1>Bewerk strength resultaten van <b><%= anatomy.firstName + ' ' + anatomy.lastName%></b></h1>
 <code>Peoplesoft ID: <%= anatomy.peoplesoft%></code>
 <hr class="mb-5">
 
-<form method="post" action="/strength/update/<%= strength.id %>">
+<form method="post" action="/strength/update/<%= strength.id %>" class="mb-5">
     <input type="hidden" value="<%= strength.anatomyId %>" name="anatomyId" />
 
     <div class="form-group">
