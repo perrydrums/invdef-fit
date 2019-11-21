@@ -46,7 +46,7 @@ const updateField = async (formula, variables) => {
   }
 
   // Set the value in the input field in the DOM.
-  document.getElementById(formula.field).value = result.value;
+  document.getElementById(formula.field).value = result.value.toFixed(2);
 };
 
 /**
