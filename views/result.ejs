@@ -1,25 +1,25 @@
-<h1>Resultaten van <b><%= anatomy.firstName + ' ' + anatomy.lastName%></b></h1>
-<code>Peoplesoft ID: <%= anatomy.peoplesoft%></code>
+<h1><%= __('Results of') %> <b><%= anatomy.firstName + ' ' + anatomy.lastName%></b></h1>
+<code><%= __('Peoplesoft ID') %>: <%= anatomy.peoplesoft%></code>
 <hr class="mb-4">
 
 <div class="row">
     <div class="col-sm">
         <div class="mb-4 d-flex">
-            <h2>Lichaam</h2>
-            <h2 class="ml-auto"><a href="/anatomies/edit/<%= anatomy.id %>" class="btn btn-primary">Bewerken</a></h2>
+            <h2><%= __('Persona') %></h2>
+            <h2 class="ml-auto"><a href="/anatomies/edit/<%= anatomy.id %>" class="btn btn-primary"><%= __('Edit') %></a></h2>
         </div>
 
         <table class="table table-striped">
             <tr>
-                <td>Naam</td>
+                <td><%= __('Name') %></td>
                 <td><%= anatomy.firstName + ' ' + anatomy.lastName %></td>
             </tr>
             <tr>
-                <td>Eenheid</td>
+                <td><%= __('Unit') %></td>
                 <td><%= anatomy.unit %></td>
             </tr>
             <tr>
-                <td>Peloton</td>
+                <td><%= __('Platoon') %></td>
                 <td><%= anatomy.platoon %></td>
             </tr>
             <tr>
@@ -27,19 +27,19 @@
                 <td></td>
             </tr>
             <tr>
-                <td>Lengte</td>
+                <td><%= __('Length') %></td>
                 <td><%= anatomy.height %> cm</td>
             </tr>
             <tr>
-                <td>Gewicht</td>
+                <td><%= __('Weight') %></td>
                 <td><%= anatomy.weight %> kg</td>
             </tr>
             <tr>
-                <td>BMI</td>
+                <td><%= __('BMI') %></td>
                 <td><%= anatomy.bmi %></td>
             </tr>
             <tr>
-                <td>Vetpercentage</td>
+                <td><%= __('Fat (in %)') %></td>
                 <td><%= anatomy.fat %>%</td>
             </tr>
         </table>
@@ -47,43 +47,43 @@
     <div class="col-sm">
         <% if (strength) {%>
             <div class="mb-4 d-flex">
-                <h2>Krachttraining</h2>
-                <h2 class="ml-auto"><a href="/strength/edit/<%= strength.id %>" class="btn btn-primary">Bewerken</a></h2>
+                <h2><%= __('Strength') %></h2>
+                <h2 class="ml-auto"><a href="/strength/edit/<%= strength.id %>" class="btn btn-primary"><%= __('Edit') %></a></h2>
             </div>
             <table class="table table-striped">
                 <thead class="thead-dark">
                 <tr>
                     <th></th>
-                    <th>Herh.</th>
-                    <th>KG</th>
-                    <th>Resultaat</th>
-                    <th>Score</th>
+                    <th><%= __('Reps') %></th>
+                    <th><%= __('KG') %></th>
+                    <th><%= __('Result') %></th>
+                    <th><%= __('Score') %></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Shoulder Press</td>
+                    <td><%= __('Shoulder press') %></td>
                     <td><%= strength.shoulderPressReps %></td>
                     <td><%= strength.shoulderPressWeight %></td>
                     <td><%= strength.shoulderPressReps * strength.shoulderPressWeight %></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Squat</td>
+                    <td><%= __('Squats') %></td>
                     <td><%= strength.squatReps %></td>
                     <td><%= strength.squatWeight %></td>
                     <td><%= strength.squatReps * strength.squatWeight %></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Pull Up</td>
+                    <td><%= __('Pull ups') %></td>
                     <td><%= strength.pullUpReps %></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Stabiliteit</td>
+                    <td><%= __('Core Stability') %></td>
                     <td></td>
                     <td></td>
                     <td><%= strength.coreStability %></td>
@@ -93,8 +93,8 @@
             </table>
         <% } else { %>
             <div class="mb-4 d-flex">
-                <h2>Krachttraining</h2>
-                <h2 class="ml-auto"><a href="/strength/add/<%= anatomy.id %>" class="btn btn-primary">Toevoegen</a></h2>
+                <h2><%= __('Strength') %></h2>
+                <h2 class="ml-auto"><a href="/strength/add/<%= anatomy.id %>" class="btn btn-primary"><%= __('Add') %></a></h2>
             </div>
         <% } %>
     </div>

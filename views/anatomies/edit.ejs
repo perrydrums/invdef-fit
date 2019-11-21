@@ -1,55 +1,70 @@
-<h1>Bewerk <b><%= anatomy.firstName + ' ' + anatomy.lastName%></b></h1>
-<code>Peoplesoft ID: <%= anatomy.peoplesoft%></code>
+<h1><%= __('Edit') %> <b><%= anatomy.firstName + ' ' + anatomy.lastName %></b></h1>
+<code><%= __('Peoplesoft ID') %>: <%= anatomy.peoplesoft%></code>
 <hr class="mb-5">
 
 <form method="post" action="/anatomies/update/<%= anatomy.id %>" class="mb-5">
-    <div class="form-group">
-        <label for="firstName">Voornaam</label>
-        <input type="text" name="firstName" class="form-control" value="<%= anatomy.firstName %>" />
+
+    <h2 class="mt-5"><%= __('Persona') %></h2>
+    <hr/>
+    <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label for="firstName"><%= __('First name') %></label>
+                <input type="text" name="firstName" class="form-control" value="<%= anatomy.firstName %>" />
+            </div>
+
+            <div class="form-group">
+                <label for="unit"><%= __('Unit') %></label>
+                <input type="text" name="unit" class="form-control" value="<%= anatomy.unit %>" />
+            </div>
+
+            <div class="form-group">
+                <label for="peoplesoft"><%= __('Peoplesoft ID') %></label>
+                <input type="text" name="peoplesoft" class="form-control" value="<%= anatomy.peoplesoft %>" />
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label for="lastName"><%= __('Last name') %></label>
+                <input type="text" name="lastName" class="form-control" value="<%= anatomy.lastName %>" />
+            </div>
+
+            <div class="form-group">
+                <label for="platoon"><%= __('Platoon') %></label>
+                <input type="text" name="platoon" class="form-control" value="<%= anatomy.platoon %>" />
+            </div>
+        </div>
     </div>
 
-    <div class="form-group">
-        <label for="lastName">Achternaam</label>
-        <input type="text" name="lastName" class="form-control" value="<%= anatomy.lastName %>" />
-    </div>
-
-    <div class="form-group">
-        <label for="unit">Eenheid</label>
-        <input type="text" name="unit" class="form-control" value="<%= anatomy.unit %>" />
-    </div>
-
-    <div class="form-group">
-        <label for="platoon">Peloton</label>
-        <input type="text" name="platoon" class="form-control" value="<%= anatomy.platoon %>" />
-    </div>
-
-    <div class="form-group">
-        <label for="peoplesoft">Peoplesoft nummer</label>
-        <input type="text" name="peoplesoft" class="form-control" value="<%= anatomy.peoplesoft %>" />
-    </div>
-
+    <h2 class="mt-5"><%= __('Body') %></h2>
     <hr/>
 
-    <div class="form-group">
-        <label for="height">Lengte (in cm)</label>
-        <input type="number" name="height" class="form-control" step="0.01" id="height" value="<%= anatomy.height %>" />
+    <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label for="height"><%= __('Length (in cm)') %></label>
+                <input type="number" name="height" class="form-control" step="0.01" id="height" value="<%= anatomy.height %>" />
+            </div>
+
+            <div class="form-group">
+                <label for="fat"><%= __('Fat (in %)') %></label>
+                <input type="number" name="fat" class="form-control" step="0.01" value="<%= anatomy.fat %>" />
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label for="weight"><%= __('Weight (in kg)') %></label>
+                <input type="number" name="weight" class="form-control" step="0.01" id="weight" value="<%= anatomy.weight %>" />
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label for="bmi"><%= __('BMI') %></label>
+                <input type="number" name="bmi" class="form-control" step="0.01" id="bmi" value="<%= anatomy.bmi %>" readonly />
+            </div>
+        </div>
     </div>
 
-    <div class="form-group">
-        <label for="weight">Gewicht (in kg)</label>
-        <input type="number" name="weight" class="form-control" step="0.01" id="weight" value="<%= anatomy.weight %>" />
-    </div>
-
-    <div class="form-group">
-        <label for="bmi">BMI</label>
-        <input type="number" name="bmi" class="form-control" step="0.01" id="bmi" value="<%= anatomy.bmi %>" readonly />
-    </div>
-
-    <div class="form-group">
-        <label for="fat">Vetpercentage</label>
-        <input type="number" name="fat" class="form-control" step="0.01" value="<%= anatomy.fat %>" />
-    </div>
-
-    <input type="submit" value="Opslaan" class="btn btn-primary" />
+    <input type="submit" value="<%= __('Save') %>" class="btn btn-primary" />
 
 </form>

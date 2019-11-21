@@ -1,40 +1,45 @@
-<h1>Bewerk strength resultaten van <b><%= anatomy.firstName + ' ' + anatomy.lastName%></b></h1>
-<code>Peoplesoft ID: <%= anatomy.peoplesoft%></code>
+<h1><%= __('Edit strength results of') %> <b><%= anatomy.firstName + ' ' + anatomy.lastName%></b></h1>
+<code><%= __('Peoplesoft ID') %>: <%= anatomy.peoplesoft%></code>
 <hr class="mb-5">
 
 <form method="post" action="/strength/update/<%= strength.id %>" class="mb-5">
     <input type="hidden" value="<%= strength.anatomyId %>" name="anatomyId" />
 
-    <div class="form-group">
-        <label for="shoulderPressReps">Shoulder Press herhalingen</label>
-        <input type="number" name="shoulderPressReps" class="form-control" id="shoulderPressReps" value="<%= strength.shoulderPressReps %>" />
+    <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label for="shoulderPressReps"><%= __('Shoulder press repetitions') %></label>
+                <input type="number" name="shoulderPressReps" class="form-control" id="shoulderPressReps" value="<%= strength.shoulderPressReps %>" />
+            </div>
+
+            <div class="form-group">
+                <label for="squatReps"><%= __('Squat repetitions') %></label>
+                <input type="number" name="squatReps" class="form-control" id="squatReps" value="<%= strength.squatReps %>" />
+            </div>
+
+            <div class="form-group">
+                <label for="pullUpReps"><%= __('Pull up repetitions') %></label>
+                <input type="number" name="pullUpReps" class="form-control" id="pullUpReps" value="<%= strength.pullUpReps %>" />
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label for="shoulderPressWeight"><%= __('Shoulder press weight') %></label>
+                <input type="number" name="shoulderPressWeight" class="form-control" id="shoulderPressWeight" value="<%= strength.shoulderPressWeight %>" />
+            </div>
+
+            <div class="form-group">
+                <label for="squatWeight"><%= __('Squat weight') %></label>
+                <input type="number" name="squatWeight" class="form-control" id="squatWeight" value="<%= strength.squatWeight %>" />
+            </div>
+
+            <div class="form-group">
+                <label for="coreStability"><%= __('Core Stability') %></label>
+                <input type="number" name="coreStability" class="form-control" step="0.01" id="coreStability" value="<%= strength.coreStability %>" />
+            </div>
+        </div>
     </div>
 
-    <div class="form-group">
-        <label for="shoulderPressWeight">Shoulder Press gewicht</label>
-        <input type="number" name="shoulderPressWeight" class="form-control" id="shoulderPressWeight" value="<%= strength.shoulderPressWeight %>" />
-    </div>
-
-    <div class="form-group">
-        <label for="squatReps">Squat herhalingen</label>
-        <input type="number" name="squatReps" class="form-control" id="squatReps" value="<%= strength.squatReps %>" />
-    </div>
-
-    <div class="form-group">
-        <label for="squatWeight">Squat gewicht</label>
-        <input type="number" name="squatWeight" class="form-control" id="squatWeight" value="<%= strength.squatWeight %>" />
-    </div>
-
-    <div class="form-group">
-        <label for="pullUpReps">Pull up herhalingen</label>
-        <input type="number" name="pullUpReps" class="form-control" id="pullUpReps" value="<%= strength.pullUpReps %>" />
-    </div>
-
-    <div class="form-group">
-        <label for="coreStability">Core Stabiliteit</label>
-        <input type="number" name="coreStability" class="form-control" step="0.01" id="coreStability" value="<%= strength.coreStability %>" />
-    </div>
-
-    <input type="submit" value="Opslaan" class="btn btn-primary" />
+    <input type="submit" value="<%= __('Save') %>" class="btn btn-primary" />
 
 </form>

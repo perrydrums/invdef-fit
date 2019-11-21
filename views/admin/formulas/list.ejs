@@ -1,11 +1,11 @@
-<h1 class="display-4">Formules</h1>
-<a href="/admin/formulas/add" class="btn btn-success mb-4">Nieuwe formule</a>
+<h1 class="display-4"><%= __('Formulas') %></h1>
+<a href="/admin/formulas/add" class="btn btn-success mb-4"><%= __('New formula') %></a>
 
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Veld</th>
-            <th>Formule</th>
+            <th><%= __('Field') %></th>
+            <th><%= __('Formula') %></th>
             <th></th>
         </tr>
     </thead>
@@ -16,10 +16,10 @@
                 <td><%= formula.field %></td>
                 <td><%= formula.formula %></td>
                 <td>
-                    <a href="/admin/formulas/edit/<%= formula.id %>" class="btn btn-primary">Bewerken</a>
+                    <a href="/admin/formulas/edit/<%= formula.id %>" class="btn btn-primary"><%= __('Edit') %></a>
                     <form class="d-inline" action="/formulas/delete" method="post">
                         <input type="hidden" name="id" value="<%= formula.id%>">
-                        <input type="submit" value="Verwijder" class="btn btn-danger" />
+                        <input type="submit" value="<%= __('Delete') %>" class="btn btn-danger" />
                     </form>
                 </td>
             </tr>

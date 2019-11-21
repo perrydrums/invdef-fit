@@ -1,20 +1,20 @@
 <form method="post" action="/formulas/create">
 
     <div class="form-group">
-        <label for="field">Veld</label>
+        <label for="field"><%= __('Field') %></label>
         <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:formulas:field') %>"></div>
         <select name="field" id="field" class="form-control">
-            <option value="bmi">BMI</option>
-            <option value="coreStability">Core Stabiliteit</option>
+            <option value="bmi"><%= __('BMI') %></option>
+            <option value="coreStability"><%= __('Core Stability') %></option>
         </select>
     </div>
 
     <div class="form-group">
-        <label for="formula">Formule</label>
+        <label for="formula"><%= __('Formula') %></label>
         <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:formulas:formula') %>"></div>
         <input type="text" name="formula" class="form-control" id="formula" />
     </div>
 
-    <input type="submit" value="Opslaan" class="btn btn-primary" />
+    <input type="submit" value="<%= __('Save') %>" class="btn btn-primary" />
 
 </form>
