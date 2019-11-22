@@ -22,6 +22,10 @@ module.exports.routes = {
   'GET /strength/edit/:id': 'StrengthController.edit',
   'POST /strength/update/:id': 'StrengthController.update',
 
+  'GET /agility/add/:id': 'AgilityController.add',
+  'GET /agility/edit/:id': 'AgilityController.edit',
+  'POST /agility/update/:id': 'AgilityController.update',
+
   'GET /admin/formulas': 'FormulasController.list',
   'GET /admin/formulas/add': 'FormulasController.add',
   'GET /admin/formulas/edit/:id': 'FormulasController.edit',

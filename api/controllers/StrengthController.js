@@ -7,15 +7,6 @@
 
 module.exports = {
 
-  list: (req, res) => {
-    Strength.find({}).exec((err, strength) => {
-      if (err) {
-        return res.send(500, {error: 'Database error'});
-      }
-      return res.view('strength/list', { strength });
-    });
-  },
-
   add: (req, res) => {
     Anatomies.findOne({ id: req.param('id') }).exec((err, anatomy) => {
       if (err) {
@@ -38,7 +29,8 @@ module.exports = {
       if (err) {
         res.send(500, {error: 'Database error'});
       }
-      return res.redirect('/strength/list');
+
+      return res.redirect('/agility/add/' + req.body.anatomyId);
     });
   },
 

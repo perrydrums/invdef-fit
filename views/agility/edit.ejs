@@ -1,0 +1,47 @@
+<h1><%= __('Edit agility results of') %> <b><%= anatomy.firstName + ' ' + anatomy.lastName%></b></h1>
+<code><%= __('Peoplesoft ID') %>: <%= anatomy.peoplesoft%></code>
+<hr class="mb-5">
+
+<form method="post" action="/agility/edit/ <%= anatomy.id %>" class="mb-5">
+    <input type="hidden" value="<%= anatomy.id %>" name="anatomyId" />
+
+    <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label for="jumpHeight"><%= __('Jump height') %></label>
+                <input type="number" name="jumpHeight" class="form-control" step="0.01" id="jumpHeight" value="<%= agility.jumpHeight %>" />
+            </div>
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label for="agility1"><%= __('Agility test 1') %></label>
+                <input type="number" name="agility1" class="form-control" step="0.01" id="agility1" value="<%= agility.agility1 %>" />
+            </div>
+
+            <div class="form-group">
+                <label for="sprint1"><%= __('Sprint test 1') %></label>
+                <input type="number" name="sprint1" class="form-control" step="0.01" id="sprint1" value="<%= agility.sprint1 %>" />
+            </div>
+        </div>
+
+        <div class="col-sm">
+            <div class="form-group">
+                <label for="agility2"><%= __('Agility test 2') %></label>
+                <input type="number" name="agility2" class="form-control" step="0.01" id="agility2" value="<%= agility.agility2 %>" />
+            </div>
+
+            <div class="form-group">
+                <label for="sprint2"><%= __('Sprint test 2') %></label>
+                <input type="number" name="sprint2" class="form-control" step="0.01" id="sprint2" value="<%= agility.sprint2 %>" />
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" value="<%= __('Save') %>" class="btn btn-primary" />
+
+</form>
