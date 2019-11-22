@@ -25,6 +25,7 @@ module.exports = {
       let results = {};
       results['anatomy'] = anatomy;
       results['strength'] = await Strength.findOne({ anatomyId: anatomy.id }).catch(() => { return null; });
+      results['agility'] = await Agility.findOne({ anatomyId: anatomy.id }).catch(() => { return null; });
 
       return res.view('result', { ...results });
     });

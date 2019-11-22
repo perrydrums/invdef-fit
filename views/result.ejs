@@ -2,7 +2,7 @@
 <code><%= __('Peoplesoft ID') %>: <%= anatomy.peoplesoft%></code>
 <hr class="mb-4">
 
-<div class="row">
+<div class="row mb-4">
     <div class="col-sm">
         <div class="mb-4 d-flex">
             <h2><%= __('Persona') %></h2>
@@ -97,5 +97,61 @@
                 <h2 class="ml-auto"><a href="/strength/add/<%= anatomy.id %>" class="btn btn-primary"><%= __('Add') %></a></h2>
             </div>
         <% } %>
+    </div>
+</div>
+<div class="row mb-4">
+    <div class="col-sm">
+        <% if (agility) {%>
+            <div class="mb-4 d-flex">
+                <h2><%= __('Agility') %></h2>
+                <h2 class="ml-auto"><a href="/agility/edit/<%= agility.id %>" class="btn btn-primary"><%= __('Edit') %></a></h2>
+            </div>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th></th>
+                    <th><%= __('1st run') %></th>
+                    <th><%= __('2nd run') %></th>
+                    <th><%= __('Total') %></th>
+                    <th><%= __('Total height') %></th>
+                    <th><%= __('Score') %></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><%= __('Sprint') %></td>
+                    <td><%= agility.sprint1 %></td>
+                    <td><%= agility.sprint2 %></td>
+                    <td><%= agility.sprint1 + agility.sprint2 %></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><%= __('Agility test') %></td>
+                    <td><%= agility.agility1 %></td>
+                    <td><%= agility.agility2 %></td>
+                    <td><%= agility.agility1 + agility.agility2 %></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><%= __('Jump test') %></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><%= agility.jumpHeight %></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        <% } else { %>
+            <div class="mb-4 d-flex">
+                <h2><%= __('Agility') %></h2>
+                <h2 class="ml-auto"><a href="/agility/add/<%= anatomy.id %>" class="btn btn-primary"><%= __('Add') %></a></h2>
+            </div>
+        <% } %>
+    </div>
+    <div class="col-sm">
+
     </div>
 </div>

@@ -2,7 +2,7 @@
 <code><%= __('Peoplesoft ID') %>: <%= anatomy.peoplesoft%></code>
 <hr class="mb-5">
 
-<form method="post" action="/agility/edit/ <%= anatomy.id %>" class="mb-5">
+<form method="post" action="/agility/update/<%= anatomy.id %>" class="mb-5">
     <input type="hidden" value="<%= anatomy.id %>" name="anatomyId" />
 
     <div class="row">
