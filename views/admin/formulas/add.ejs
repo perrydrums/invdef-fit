@@ -3,7 +3,7 @@
     <div class="form-group">
         <label for="field"><%= __('Field') %></label>
         <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:formulas:field') %>"></div>
-        <select name="field" id="field" class="form-control">
+        <select name="field" id="field" class="form-control" required>
             <option value="bmi"><%= __('BMI') %></option>
             <option value="coreStability"><%= __('Core Stability') %></option>
         </select>
@@ -12,7 +12,7 @@
     <div class="form-group">
         <label for="formula"><%= __('Formula') %></label>
         <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:formulas:formula') %>"></div>
-        <input type="text" name="formula" class="form-control" id="formula" />
+        <input type="text" name="formula" class="form-control" id="formula" required/>
     </div>
 
     <input type="submit" value="<%= __('Save') %>" class="btn btn-primary" />

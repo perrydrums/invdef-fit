@@ -10,28 +10,28 @@
         <div class="col-sm">
             <div class="form-group">
                 <label for="firstName"><%= __('First name') %></label>
-                <input type="text" name="firstName" class="form-control" value="<%= anatomy.firstName %>" />
+                <input type="text" name="firstName" class="form-control" value="<%= anatomy.firstName %>" required/>
             </div>
 
             <div class="form-group">
                 <label for="unit"><%= __('Unit') %></label>
-                <input type="text" name="unit" class="form-control" value="<%= anatomy.unit %>" />
+                <input type="text" name="unit" class="form-control" value="<%= anatomy.unit %>" required/>
             </div>
 
             <div class="form-group">
                 <label for="peoplesoft"><%= __('Peoplesoft ID') %></label>
-                <input type="text" name="peoplesoft" class="form-control" value="<%= anatomy.peoplesoft %>" />
+                <input type="text" name="peoplesoft" class="form-control" value="<%= anatomy.peoplesoft %>" required/>
             </div>
         </div>
         <div class="col-sm">
             <div class="form-group">
                 <label for="lastName"><%= __('Last name') %></label>
-                <input type="text" name="lastName" class="form-control" value="<%= anatomy.lastName %>" />
+                <input type="text" name="lastName" class="form-control" value="<%= anatomy.lastName %>" required/>
             </div>
 
             <div class="form-group">
                 <label for="platoon"><%= __('Platoon') %></label>
-                <input type="text" name="platoon" class="form-control" value="<%= anatomy.platoon %>" />
+                <input type="text" name="platoon" class="form-control" value="<%= anatomy.platoon %>" required/>
             </div>
         </div>
     </div>
@@ -43,18 +43,18 @@
         <div class="col-sm">
             <div class="form-group">
                 <label for="height"><%= __('Length (in cm)') %></label>
-                <input type="number" name="height" class="form-control" step="0.01" id="height" value="<%= anatomy.height %>" />
+                <input type="number" name="height" class="form-control" step="0.01" id="height" value="<%= anatomy.height %>" required/>
             </div>
 
             <div class="form-group">
                 <label for="fat"><%= __('Fat (in %)') %></label>
-                <input type="number" name="fat" class="form-control" step="0.01" value="<%= anatomy.fat %>" />
+                <input type="number" name="fat" class="form-control" step="0.01" value="<%= anatomy.fat %>" required/>
             </div>
         </div>
         <div class="col-sm">
             <div class="form-group">
                 <label for="weight"><%= __('Weight (in kg)') %></label>
-                <input type="number" name="weight" class="form-control" step="0.01" id="weight" value="<%= anatomy.weight %>" />
+                <input type="number" name="weight" class="form-control" step="0.01" id="weight" value="<%= anatomy.weight %>" required/>
             </div>
         </div>
         <div class="col-sm">
