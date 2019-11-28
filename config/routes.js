@@ -12,9 +12,10 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
 
-  '/results': 'AnatomiesController.list',
+  'GET /results': 'ResultsController.list',
+  'GET /result/:id': 'ResultsController.view',
+  'GET /charts/:id': 'ResultsController.charts',
 
-  'GET /result/:id': 'AnatomiesController.view',
   'GET /anatomies/edit/:id': 'AnatomiesController.edit',
   'POST /anatomies/update/:id': 'AnatomiesController.update',
 
