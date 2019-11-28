@@ -18,7 +18,8 @@ module.exports.routes = {
   'GET /charts/:id': 'ResultsController.charts',
 
   'GET /platoons': 'PlatoonController.list',
-  'GET /platoon/:id': 'PlatoonController.units',
+  'GET /platoon/:id': 'PlatoonController.overview',
+  'GET /platoon/:id/units': 'PlatoonController.units',
 
   'GET /anatomies/edit/:id': 'AnatomiesController.edit',
   'POST /anatomies/update/:id': 'AnatomiesController.update',

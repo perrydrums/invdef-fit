@@ -5,11 +5,8 @@
         <tr>
             <td><%= platoon.name %></td>
             <td>
-                <a href="/platoon/<%= platoon.id %>" class="btn btn-primary"><%= __('View') %></a>
-                <form class="d-inline" action="/platoon/delete" method="post">
-                    <input type="hidden" name="id" value="<%= platoon.id %>">
-                    <input type="submit" value="<%= __('Delete') %>" class="btn btn-danger" />
-                </form>
+                <a href="/platoon/<%= platoon.id %>" class="btn btn-primary"><%= __('Overview') %></a>
+                <a href="/platoon/<%= platoon.id %>/units" class="btn btn-primary"><%= __('Units') %></a>
             </td>
         </tr>
 
