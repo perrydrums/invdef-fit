@@ -2,7 +2,7 @@
 	"info:formulas:field": "Kies het veld dat gevuld wordt door de formule.",
 	"info:formulas:formula": "Vul hier de Excel formule in.",
 	"info:formulas:readonly": "De waarde van dit veld wordt berekend door een formule.",
-  "info:anatomy:platoon": "Kies een peloton uit de lijst of voeg een nieuwe toe door de naam in te typen.",
+	"info:anatomy:platoon": "Kies een peloton uit de lijst of voeg een nieuwe toe door de naam in te typen.",
 	"Persona": "Persoonsgegevens",
 	"Body": "Lichaam",
 	"New result": "Nieuw resultaat",
@@ -59,5 +59,7 @@
 	"Sprint": "Sprint",
 	"Agility test": "Agility test",
 	"Jump test": "Jump test",
-	"Edit agility results of": "Bewerk agility resultaten van"
+	"Edit agility results of": "Bewerk agility resultaten van",
+	"Platoons": "Pelotons",
+	"Units": "Eenheden"
 }
