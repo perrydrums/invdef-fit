@@ -7,28 +7,23 @@
 
 module.exports = {
 
-  list: (req, res) => {
-    Anatomies.find({}).exec((err, anatomies) => {
-      if (err) {
-        return res.send(500, {error: 'Database error'});
-      }
+  list: async (req, res) => {
+    const anatomies = await Anatomies.find().populate('platoon');
+    if (anatomies) {
       return res.view('anatomies/list', { anatomies });
-    });
+    }
   },
 
-  view: (req, res) => {
-    Anatomies.findOne({ id: req.param('id') }).exec(async (err, anatomy) => {
-      if (err) {
-        return res.send(500, {error: 'Database error'});
-      }
-
+  view: async (req, res) => {
+    const anatomy = await Anatomies.findOne({ id: req.param('id') }).populate('platoon');
+    if (anatomy) {
       let results = {};
       results['anatomy'] = anatomy;
       results['strength'] = await Strength.findOne({ anatomyId: anatomy.id }).catch(() => { return null; });
       results['agility'] = await Agility.findOne({ anatomyId: anatomy.id }).catch(() => { return null; });
 
       return res.view('result', { ...results });
-    });
+    }
   },
 
   delete: (req, res) => {

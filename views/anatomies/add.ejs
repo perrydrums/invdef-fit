@@ -31,7 +31,13 @@
 
             <div class="form-group">
                 <label for="platoon"><%= __('Platoon') %></label>
-                <input type="text" name="platoon" class="form-control" required/>
+                <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:anatomy:platoon') %>"></div>
+                <input type="text" name="platoon" id="platoon" list="platoons" class="form-control" required/>
+                <datalist id="platoons">
+                    <% for (let i = 0; i < platoons.length; i ++) { %>
+                        <option value="<%= platoons[i].name %>"></option>
+                    <% } %>
+                </datalist>
             </div>
         </div>
     </div>

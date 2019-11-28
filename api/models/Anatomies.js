@@ -17,9 +17,6 @@ module.exports = {
     unit: {
       type: 'string',
     },
-    platoon: {
-      type: 'string',
-    },
     peoplesoft: {
       type: 'string',
     },
@@ -34,7 +31,11 @@ module.exports = {
     },
     fat: {
       type: 'float',
-    }
+    },
+
+    platoon: {
+      model: 'platoon',
+    },
   },
 
 };
