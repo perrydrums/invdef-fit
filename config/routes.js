@@ -14,6 +14,7 @@ module.exports.routes = {
 
   'GET /results': 'ResultsController.list',
   'GET /result/:id': 'ResultsController.view',
+  'POST /results/delete': 'ResultsController.delete',
   'GET /charts/:id': 'ResultsController.charts',
 
   'GET /anatomies/edit/:id': 'AnatomiesController.edit',
