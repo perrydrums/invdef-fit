@@ -1,0 +1,29 @@
+<h1 class="display-4"><%= __('Score') %></h1>
+<a href="/admin/score/add" class="btn btn-success mb-4"><%= __('Nieuwe score') %></a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th><%= __('Field') %></th>
+            <th><%= __('Maximum amount') %></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% scores.forEach(score => { %>
+
+            <tr>
+                <td><%= score.field %></td>
+                <td><%= score.max %></td>
+                <td>
+                    <a href="/admin/score/edit/<%= score.id %>" class="btn btn-primary"><%= __('Edit') %></a>
+                    <form class="d-inline" action="/score/delete" method="post">
+                        <input type="hidden" name="id" value="<%= score.id%>">
+                        <input type="submit" value="<%= __('Delete') %>" class="btn btn-danger" />
+                    </form>
+                </td>
+            </tr>
+
+        <% }) %>
+    </tbody>
+</table>

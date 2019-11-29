@@ -63,5 +63,10 @@
 	"Platoons": "Pelotons",
 	"Units": "Eenheden",
 	"Overview": "Overzicht",
-	"2600m loop": "2600m loop"
+	"2600m loop": "2600m loop",
+	"Nieuwe score": "Nieuwe score",
+	"Maximum amount": "Maximum amount",
+	"info:score:field": "info:score:field",
+	"Pull Up": "Pull Up",
+	"info:score:max": "info:score:max"
 }

@@ -38,4 +38,9 @@ module.exports.routes = {
   'POST /admin/formulas/update/:id': 'FormulasController.update',
   'POST /formulas/solve': 'FormulasController.solve',
 
+  'GET /admin/score': 'ScoreController.list',
+  'GET /admin/score/add': 'ScoreController.add',
+  'GET /admin/score/edit/:id': 'ScoreController.edit',
+  'POST /admin/score/update/:id': 'ScoreController.update',
+
 };

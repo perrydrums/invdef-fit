@@ -1,0 +1,26 @@
+<form method="post" action="/admin/score/update/<%= score.id %>">
+
+    <div class="form-group">
+        <label for="field"><%= __('Field') %></label>
+        <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:score:field') %>"></div>
+        <select name="field" id="field" class="form-control" value="<%= score.field %>" required>
+            <option value="sprint"><%= __('Sprint') %></option>
+            <option value="agility"><%= __('Agility') %></option>
+            <option value="jump"><%= __('Jump test') %></option>
+            <option value="run"><%= __('2600m loop') %></option>
+            <option value="shoulderPress"><%= __('Shoulder press') %></option>
+            <option value="squats"><%= __('Squats') %></option>
+            <option value="pullUp"><%= __('Pull Up') %></option>
+            <option value="coreStability"><%= __('Core Stability') %></option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="max"><%= __('Maximum amount') %></label>
+        <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:score:max') %>"></div>
+        <input type="number" name="max" class="form-control" id="max" value="<%= score.max %>" required/>
+    </div>
+
+    <input type="submit" value="<%= __('Save') %>" class="btn btn-primary" />
+
+</form>
