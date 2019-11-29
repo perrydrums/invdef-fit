@@ -33,7 +33,7 @@ module.exports = {
         if (err) {
           return res.send(500, {error: 'Database error'});
         }
-        return res.redirect('/agility/add/' + anatomy[0].id);
+        res.redirect('/result/' + req.body.anatomyId);
       });
     });
   },
