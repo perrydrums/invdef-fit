@@ -1,25 +1,41 @@
 /**
  * Create a chart.
  *
- * @param {HTMLCanvasElement} element
- * @param {string} model
+ * @param {string} element
+ * @param {array} labels
+ * @param {array} data
+ * @param {string} platoon
  */
-const createChart = (element, model) => {
-  // const ctx = document.getElementById(element).getContext('2d');
+const createRadarChart = (element, labels, data, platoon) => {
+  const ctx = document.getElementById(element).getContext('2d');
 
   // eslint-disable-next-line no-undef
-  new Chart(element, {
+  new Chart(ctx, {
     type: 'radar',
     data: {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-      datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'rgba(255, 99, 132, 0.3)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30, 45]
-      }]
+      labels,
+      datasets: [
+        {
+          label: platoon,
+          backgroundColor: 'rgba(255, 99, 132, 0.3)',
+          borderColor: 'rgb(255, 99, 132)',
+          data,
+        },
+        {
+          label: 'Richtlijn',
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+          borderColor: 'rgba(0, 255, 0, 0.5)',
+          data: [3, 3, 3, 3, 3],
+        }
+      ],
     },
-    options: {}
+    options: {
+      scale: {
+        ticks: {
+          suggestedMin: 0,
+          suggestedMax: 5
+        }
+      }}
   });
 
 };
