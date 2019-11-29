@@ -16,10 +16,10 @@
       createRadarChart('chart',
         ['Vet %', 'Military Strength', 'Speed & Agility', 'Core Stability', 'Endurance'],
         [
-            <%= averages.fat / 10 %>,
+            <%= (averages.fat / 10).toFixed(2) %>,
             3,
             2,
-            <%= averages.coreStability %>,
+            <%= (averages.coreStability).toFixed(2) %>,
             2
         ],
         '<%= platoon.name %>'

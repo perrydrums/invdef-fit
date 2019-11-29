@@ -45,6 +45,72 @@
         </table>
     </div>
     <div class="col-sm">
+        <h2 class="mb-4"><%= __('Overview') %></h2>
+        <br/>
+        <canvas id="chart" class="chart"></canvas>
+    </div>
+</div>
+<div class="row mb-4">
+    <div class="col-sm">
+        <% if (agility) {%>
+            <div class="mb-4 d-flex">
+                <h2><%= __('Agility') %></h2>
+                <h2 class="ml-auto"><a href="/agility/edit/<%= agility.id %>" class="btn btn-primary"><%= __('Edit') %></a></h2>
+            </div>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th></th>
+                    <th><%= __('1st run') %></th>
+                    <th><%= __('2nd run') %></th>
+                    <th><%= __('Total') %></th>
+                    <th><%= __('Total height') %></th>
+                    <th><%= __('Score') %></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><%= __('Sprint') %></td>
+                    <td><%= agility.sprint1 %></td>
+                    <td><%= agility.sprint2 %></td>
+                    <td><%= (agility.sprint1 + agility.sprint2).toFixed(2) %></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><%= __('Agility test') %></td>
+                    <td><%= agility.agility1 %></td>
+                    <td><%= agility.agility2 %></td>
+                    <td><%= (agility.agility1 + agility.agility2).toFixed(2) %></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><%= __('Jump test') %></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><%= agility.jumpHeight %></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><%= __('2600m loop') %></td>
+                    <td><%= agility.run %></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        <% } else { %>
+            <div class="mb-4 d-flex">
+                <h2><%= __('Agility') %></h2>
+                <h2 class="ml-auto"><a href="/agility/add/<%= anatomy.id %>" class="btn btn-primary"><%= __('Add') %></a></h2>
+            </div>
+        <% } %>
+    </div>
+    <div class="col-sm">
         <% if (strength) {%>
             <div class="mb-4 d-flex">
                 <h2><%= __('Strength') %></h2>
@@ -99,67 +165,19 @@
         <% } %>
     </div>
 </div>
-<div class="row mb-4">
-    <div class="col-sm">
-        <% if (agility) {%>
-            <div class="mb-4 d-flex">
-                <h2><%= __('Agility') %></h2>
-                <h2 class="ml-auto"><a href="/agility/edit/<%= agility.id %>" class="btn btn-primary"><%= __('Edit') %></a></h2>
-            </div>
-            <table class="table table-striped">
-                <thead class="thead-dark">
-                <tr>
-                    <th></th>
-                    <th><%= __('1st run') %></th>
-                    <th><%= __('2nd run') %></th>
-                    <th><%= __('Total') %></th>
-                    <th><%= __('Total height') %></th>
-                    <th><%= __('Score') %></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><%= __('Sprint') %></td>
-                    <td><%= agility.sprint1 %></td>
-                    <td><%= agility.sprint2 %></td>
-                    <td><%= agility.sprint1 + agility.sprint2 %></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><%= __('Agility test') %></td>
-                    <td><%= agility.agility1 %></td>
-                    <td><%= agility.agility2 %></td>
-                    <td><%= agility.agility1 + agility.agility2 %></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><%= __('Jump test') %></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><%= agility.jumpHeight %></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><%= __('2600m loop') %></td>
-                    <td><%= agility.run %></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                </tbody>
-            </table>
-        <% } else { %>
-            <div class="mb-4 d-flex">
-                <h2><%= __('Agility') %></h2>
-                <h2 class="ml-auto"><a href="/agility/add/<%= anatomy.id %>" class="btn btn-primary"><%= __('Add') %></a></h2>
-            </div>
-        <% } %>
-    </div>
-    <div class="col-sm">
 
-    </div>
-</div>
+<script>
+  window.addEventListener('load', (event) => {
+    createRadarChart('chart',
+      ['Vet %', 'Military Strength', 'Speed & Agility', 'Core Stability', 'Endurance'],
+      [
+          <%= anatomy.fat / 10 %>,
+        3,
+        2,
+          <%= strength.coreStability %>,
+        2
+      ],
+      '<%= anatomy.platoon.name %>'
+    );
+  });
+</script>
