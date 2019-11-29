@@ -1,12 +1,42 @@
 <h1><%= __('Results of') %> <b><%= platoon.name %></b></h1>
 <hr class="mb-4">
 
-<div class="row">
+<div class="row mb-4">
     <div class="col-sm">
-        <canvas id="chart" width="100" height="100"></canvas>
+        <h2 class="mb-4"><%= __('Units') %></h2>
+        <div class="units--scrollable">
+            <table class="table table-striped">
+                <% anatomies.forEach(anatomy => { %>
+                    <tr>
+                        <td>
+                            <div class="d-flex">
+                                <div><%= anatomy.firstName + ' ' + anatomy.lastName %></div>
+                                <div class="ml-auto">
+                                    <a href="/result/<%= anatomy.id %>" class="btn btn-primary"><%= __('View') %></a>
+                                    <form class="d-inline" action="/results/delete" method="post">
+                                        <input type="hidden" name="id" value="<%= anatomy.id %>">
+                                        <input type="submit" value="<%= __('Delete') %>" class="btn btn-danger" />
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                <% }) %>
+            </table>
+        </div>
+
     </div>
     <div class="col-sm">
-
+        <h2 class="mb-4"><%= __('Overview') %></h2>
+        <canvas id="chart"></canvas>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm">
+        <h2 class="mb-4">----</h2>
+    </div>
+    <div class="col-sm">
+        <h2 class="mb-4">----</h2>
     </div>
 </div>
 
@@ -26,6 +56,3 @@
       );
     });
 </script>
-
-<%= averages.fat %>
-<%= averages.coreStability %>

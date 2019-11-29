@@ -9,3 +9,8 @@
   position: relative;
   top: 3px;
 }
+
+.units--scrollable {
+  overflow: scroll;
+  max-height: 300px;
+}
