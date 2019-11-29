@@ -21,16 +21,20 @@ module.exports = {
       type: 'string',
     },
     height: {
-      type: 'float',
+      type: 'number',
+      columnType: 'FLOAT'
     },
     weight: {
-      type: 'float',
+      type: 'number',
+      columnType: 'FLOAT'
     },
     bmi: {
-      type: 'float',
+      type: 'number',
+      columnType: 'FLOAT'
     },
     fat: {
-      type: 'float',
+      type: 'number',
+      columnType: 'FLOAT'
     },
 
     platoon: {

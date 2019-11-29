@@ -12,19 +12,24 @@ module.exports = {
       type: 'number',
     },
     jumpHeight: {
-      type: 'float',
+      type: 'number',
+      columnType: 'FLOAT'
     },
     agility1: {
-      type: 'float',
+      type: 'number',
+      columnType: 'FLOAT'
     },
     agility2: {
-      type: 'float',
+      type: 'number',
+      columnType: 'FLOAT'
     },
     sprint1: {
-      type: 'float',
+      type: 'number',
+      columnType: 'FLOAT'
     },
     sprint2: {
-      type: 'float',
+      type: 'number',
+      columnType: 'FLOAT'
     },
     run: {
       type: 'string',

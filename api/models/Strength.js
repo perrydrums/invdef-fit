@@ -27,7 +27,8 @@ module.exports = {
       type: 'number',
     },
     coreStability: {
-      type: 'float',
+      type: 'number',
+      columnType: 'FLOAT'
     },
   },
 
