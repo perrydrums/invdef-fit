@@ -26,6 +26,9 @@ module.exports = {
     sprint2: {
       type: 'float',
     },
+    run: {
+      type: 'string',
+    }
   },
 
 };

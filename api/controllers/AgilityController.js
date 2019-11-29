@@ -24,6 +24,7 @@ module.exports = {
       agility2: req.body.agility2,
       sprint1: req.body.sprint1,
       sprint2: req.body.sprint2,
+      run: req.body.run,
     }).exec((err) => {
       if (err) {
         res.send(500, {error: 'Database error'});
@@ -70,6 +71,7 @@ module.exports = {
       agility2: req.body.agility2,
       sprint1: req.body.sprint1,
       sprint2: req.body.sprint2,
+      run: req.body.run,
     }).exec((err) => {
       if (err) {
         res.send(500, {error: 'Database error'});
