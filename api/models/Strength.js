@@ -17,16 +17,32 @@ module.exports = {
     shoulderPressWeight: {
       type: 'number',
     },
+    shoulderPressScore: {
+      type: 'number',
+      columnType: 'FLOAT'
+    },
     squatReps: {
       type: 'number',
     },
     squatWeight: {
       type: 'number',
     },
+    squatScore: {
+      type: 'number',
+      columnType: 'FLOAT'
+    },
     pullUpReps: {
       type: 'number',
     },
+    pullUpScore: {
+      type: 'number',
+      columnType: 'FLOAT'
+    },
     coreStability: {
+      type: 'number',
+      columnType: 'FLOAT'
+    },
+    coreStabilityScore: {
       type: 'number',
       columnType: 'FLOAT'
     },

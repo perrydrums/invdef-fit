@@ -18,6 +18,7 @@ module.exports = {
     const anatomy = await Anatomies.findOne({ id: req.param('id') }).populate('platoon');
     if (anatomy) {
       let results = {};
+
       results['anatomy'] = anatomy;
       results['strength'] = await Strength.findOne({ anatomyId: anatomy.id }).catch(() => { return null; });
       results['agility'] = await Agility.findOne({ anatomyId: anatomy.id }).catch(() => { return null; });

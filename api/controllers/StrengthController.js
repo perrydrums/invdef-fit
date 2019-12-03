@@ -16,15 +16,19 @@ module.exports = {
     });
   },
 
-  create: (req, res) => {
+  create: async (req, res) => {
     Strength.create({
       anatomyId: req.body.anatomyId,
       shoulderPressReps: req.body.shoulderPressReps,
       shoulderPressWeight: req.body.shoulderPressWeight,
+      shoulderPressScore: await sails.helpers.score('shoulderPress', req.body.shoulderPressReps * req.body.shoulderPressWeight),
       squatReps: req.body.squatReps,
       squatWeight: req.body.squatWeight,
+      squatScore: await sails.helpers.score('squats', req.body.squatReps * req.body.squatWeight),
       pullUpReps: req.body.pullUpReps,
+      pullUpScore: await sails.helpers.score('pullUp', req.body.pullUpReps),
       coreStability: req.body.coreStability,
+      coreStabilityScore: await sails.helpers.score('coreStability', req.body.coreStability),
     }).exec((err) => {
       if (err) {
         res.send(500, {error: 'Database error'});
@@ -57,17 +61,21 @@ module.exports = {
     });
   },
 
-  update: (req, res) => {
+  update: async (req, res) => {
     const id = req.body.anatomyId;
 
     Strength.update({ id: req.param('id') }, {
       anatomyId: req.body.anatomyId,
       shoulderPressReps: req.body.shoulderPressReps,
       shoulderPressWeight: req.body.shoulderPressWeight,
+      shoulderPressScore: await sails.helpers.score('shoulderPress', req.body.shoulderPressReps * req.body.shoulderPressWeight),
       squatReps: req.body.squatReps,
       squatWeight: req.body.squatWeight,
+      squatScore: await sails.helpers.score('squats', req.body.squatReps * req.body.squatWeight),
       pullUpReps: req.body.pullUpReps,
+      pullUpScore: await sails.helpers.score('pullUp', req.body.pullUpReps),
       coreStability: req.body.coreStability,
+      coreStabilityScore: await sails.helpers.score('coreStability', req.body.coreStability),
     }).exec((err) => {
       if (err) {
         res.send(500, {error: 'Database error'});
