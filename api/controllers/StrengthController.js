@@ -17,18 +17,25 @@ module.exports = {
   },
 
   create: async (req, res) => {
+    const shoulderPressScore = await sails.helpers.score('shoulderPress', req.body.shoulderPressReps * req.body.shoulderPressWeight);
+    const squatScore = await sails.helpers.score('squats', req.body.squatReps * req.body.squatWeight);
+    const pullUpScore = await sails.helpers.score('pullUp', req.body.pullUpReps);
+    const coreStabilityScore = await sails.helpers.score('coreStability', req.body.coreStability);
+    const score = ((parseFloat(shoulderPressScore) + parseFloat(squatScore) + parseFloat(pullUpScore) + parseFloat(coreStabilityScore)) / 4).toFixed(1);
+
     Strength.create({
       anatomyId: req.body.anatomyId,
       shoulderPressReps: req.body.shoulderPressReps,
       shoulderPressWeight: req.body.shoulderPressWeight,
-      shoulderPressScore: await sails.helpers.score('shoulderPress', req.body.shoulderPressReps * req.body.shoulderPressWeight),
       squatReps: req.body.squatReps,
       squatWeight: req.body.squatWeight,
-      squatScore: await sails.helpers.score('squats', req.body.squatReps * req.body.squatWeight),
       pullUpReps: req.body.pullUpReps,
-      pullUpScore: await sails.helpers.score('pullUp', req.body.pullUpReps),
       coreStability: req.body.coreStability,
-      coreStabilityScore: await sails.helpers.score('coreStability', req.body.coreStability),
+      shoulderPressScore,
+      squatScore,
+      pullUpScore,
+      coreStabilityScore,
+      score,
     }).exec((err) => {
       if (err) {
         res.send(500, {error: 'Database error'});
@@ -63,19 +70,25 @@ module.exports = {
 
   update: async (req, res) => {
     const id = req.body.anatomyId;
+    const shoulderPressScore = await sails.helpers.score('shoulderPress', req.body.shoulderPressReps * req.body.shoulderPressWeight);
+    const squatScore = await sails.helpers.score('squats', req.body.squatReps * req.body.squatWeight);
+    const pullUpScore = await sails.helpers.score('pullUp', req.body.pullUpReps);
+    const coreStabilityScore = await sails.helpers.score('coreStability', req.body.coreStability);
+    const score = ((parseFloat(shoulderPressScore) + parseFloat(squatScore) + parseFloat(pullUpScore) + parseFloat(coreStabilityScore)) / 4).toFixed(1);
 
     Strength.update({ id: req.param('id') }, {
       anatomyId: req.body.anatomyId,
       shoulderPressReps: req.body.shoulderPressReps,
       shoulderPressWeight: req.body.shoulderPressWeight,
-      shoulderPressScore: await sails.helpers.score('shoulderPress', req.body.shoulderPressReps * req.body.shoulderPressWeight),
       squatReps: req.body.squatReps,
       squatWeight: req.body.squatWeight,
-      squatScore: await sails.helpers.score('squats', req.body.squatReps * req.body.squatWeight),
       pullUpReps: req.body.pullUpReps,
-      pullUpScore: await sails.helpers.score('pullUp', req.body.pullUpReps),
       coreStability: req.body.coreStability,
-      coreStabilityScore: await sails.helpers.score('coreStability', req.body.coreStability),
+      shoulderPressScore,
+      squatScore,
+      pullUpScore,
+      coreStabilityScore,
+      score,
     }).exec((err) => {
       if (err) {
         res.send(500, {error: 'Database error'});

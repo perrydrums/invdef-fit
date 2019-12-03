@@ -94,12 +94,20 @@
                     <td></td>
                 </tr>
                 <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><b>agility.score</b></td>
+                </tr>
+                <tr>
                     <td><%= __('2600m loop') %></td>
                     <td><%= agility.run %></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td><b></b></td>
                 </tr>
                 </tbody>
             </table>
@@ -155,6 +163,13 @@
                     <td><%= strength.coreStability %></td>
                     <td><%= strength.coreStabilityScore %></td>
                 </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><b><%= strength.score %></b></td>
+                </tr>
                 </tbody>
             </table>
         <% } else { %>
@@ -172,10 +187,10 @@
       ['Vet %', 'Military Strength', 'Speed & Agility', 'Core Stability', 'Endurance'],
       [
           <%= anatomy.fat / 10 %>,
-        3,
-        2,
-          <%= strength.coreStability %>,
-        2
+          <%= strength.score %>,
+          <%= agility.score %>,
+          <%= strength.coreStabilityScore %>,
+          <%= agility.runScore %>,
       ],
       '<%= anatomy.platoon.name %>'
     );

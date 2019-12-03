@@ -46,6 +46,10 @@ module.exports = {
       type: 'number',
       columnType: 'FLOAT'
     },
+    score: {
+      type: 'number',
+      columnType: 'FLOAT'
+    },
   },
 
 };
