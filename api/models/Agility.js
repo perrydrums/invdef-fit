@@ -15,11 +15,19 @@ module.exports = {
       type: 'number',
       columnType: 'FLOAT'
     },
+    jumpScore: {
+      type: 'number',
+      columnType: 'FLOAT'
+    },
     agility1: {
       type: 'number',
       columnType: 'FLOAT'
     },
     agility2: {
+      type: 'number',
+      columnType: 'FLOAT'
+    },
+    agilityScore: {
       type: 'number',
       columnType: 'FLOAT'
     },
@@ -31,8 +39,20 @@ module.exports = {
       type: 'number',
       columnType: 'FLOAT'
     },
+    sprintScore: {
+      type: 'number',
+      columnType: 'FLOAT'
+    },
     run: {
       type: 'string',
+    },
+    runScore: {
+      type: 'number',
+      columnType: 'FLOAT'
+    },
+    score: {
+      type: 'number',
+      columnType: 'FLOAT'
     }
   },
 

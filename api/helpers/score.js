@@ -14,6 +14,11 @@ module.exports = {
   },
 
   fn: async (inputs) => {
+
+    if (inputs.field === 'run') {
+      return 1;
+    }
+
     const s = await Score.findOne({ field: inputs.field });
 
     if (!s) { return 0; }

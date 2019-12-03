@@ -16,7 +16,14 @@ module.exports = {
     });
   },
 
-  create: (req, res) => {
+  create: async (req, res) => {
+    const jumpScore = await sails.helpers.score('jump', req.body.jumpHeight);
+    const agilityScore = await sails.helpers.score('agility', parseFloat(req.body.agility1) + parseFloat(req.body.agility2));
+    const sprintScore = await sails.helpers.score('sprint', parseFloat(req.body.sprint1) + parseFloat(req.body.sprint2));
+    const runScore = 0;
+    // const runScore = await sails.helpers.score('run', req.body.run);
+    const score = ((parseFloat(jumpScore) + parseFloat(agilityScore) + parseFloat(sprintScore)) / 3).toFixed(1);
+
     Agility.create({
       anatomyId: req.body.anatomyId,
       jumpHeight: req.body.jumpHeight,
@@ -25,6 +32,11 @@ module.exports = {
       sprint1: req.body.sprint1,
       sprint2: req.body.sprint2,
       run: req.body.run,
+      jumpScore,
+      agilityScore,
+      sprintScore,
+      runScore,
+      score,
     }).exec((err) => {
       if (err) {
         res.send(500, {error: 'Database error'});
@@ -61,8 +73,14 @@ module.exports = {
     });
   },
 
-  update: (req, res) => {
+  update: async (req, res) => {
     const id = req.body.anatomyId;
+    const jumpScore = await sails.helpers.score('jump', req.body.jumpHeight);
+    const agilityScore = await sails.helpers.score('agility', parseFloat(req.body.agility1) + parseFloat(req.body.agility2));
+    const sprintScore = await sails.helpers.score('sprint', parseFloat(req.body.sprint1) + parseFloat(req.body.sprint2));
+    const runScore = 0;
+    // const runScore = await sails.helpers.score('run', req.body.run);
+    const score = ((parseFloat(jumpScore) + parseFloat(agilityScore) + parseFloat(sprintScore)) / 3).toFixed(1);
 
     Agility.update({ id: req.param('id') }, {
       anatomyId: req.body.anatomyId,
@@ -72,6 +90,11 @@ module.exports = {
       sprint1: req.body.sprint1,
       sprint2: req.body.sprint2,
       run: req.body.run,
+      jumpScore,
+      agilityScore,
+      sprintScore,
+      runScore,
+      score,
     }).exec((err) => {
       if (err) {
         res.send(500, {error: 'Database error'});

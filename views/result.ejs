@@ -75,7 +75,7 @@
                     <td><%= agility.sprint2 %></td>
                     <td><%= (agility.sprint1 + agility.sprint2).toFixed(2) %></td>
                     <td></td>
-                    <td></td>
+                    <td><b><%= agility.sprintScore %></b></td>
                 </tr>
                 <tr>
                     <td><%= __('Agility test') %></td>
@@ -83,7 +83,7 @@
                     <td><%= agility.agility2 %></td>
                     <td><%= (agility.agility1 + agility.agility2).toFixed(2) %></td>
                     <td></td>
-                    <td></td>
+                    <td><b><%= agility.agilityScore %></b></td>
                 </tr>
                 <tr>
                     <td><%= __('Jump test') %></td>
@@ -91,7 +91,7 @@
                     <td></td>
                     <td></td>
                     <td><%= agility.jumpHeight %></td>
-                    <td></td>
+                    <td><b><%= agility.jumpScore %></b></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -99,7 +99,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><b>agility.score</b></td>
+                    <td><b><%= agility.score %></b></td>
                 </tr>
                 <tr>
                     <td><%= __('2600m loop') %></td>
@@ -107,7 +107,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><b></b></td>
+                    <td><b><%= agility.runScore %></b></td>
                 </tr>
                 </tbody>
             </table>
