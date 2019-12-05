@@ -1,8 +1,49 @@
-<h1 class="display-4">INVDEF FIT</h1>
-<p class="mb-4">Beheer FIT test resultaten</p>
+<h1 class="display-4">Algemene Militaire Fitheid</h1>
+<code>Beheer AMF testresultaten</code>
+<hr class="mb-4"/>
 
-<a href="/platoons" class="btn btn-light">Pelotons</a>
-<a href="/results" class="btn btn-light">Testresultaten</a>
-<a href="/anatomies/add" class="btn btn-light">Nieuw testresultaat</a>
-<a href="/admin/formulas" class="btn btn-light">Formules</a>
-<a href="/admin/score" class="btn btn-light">Scores</a>
+<div class="row mb-big">
+    <div class="col-sm" onclick="location.href = '/companies'">
+        <div class="img-company">
+            <div class="cover-white">
+                <div class="mb-4 d-flex">
+                    <h2><%= __('Companies') %></h2>
+                    <h2 class="ml-auto"><a href="/company/add" class="btn btn-primary"><%= __('New Company') %></a></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm" onclick="location.href = '/results'">
+        <div class="img-results">
+            <div class="cover-white">
+                <div class="mb-4 d-flex">
+                    <h2><%= __('Results') %></h2>
+                    <h2 class="ml-auto"><a href="/anatomies/add" class="btn btn-primary"><%= __('New Result') %></a></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-big">
+    <div class="col-sm" onclick="location.href = '/companies'">
+        <div class="img-company">
+            <div class="cover-white">
+                <div class="mb-4 d-flex">
+                    <h2><%= __('Companies') %></h2>
+                    <h2 class="ml-auto"><a href="/company/add" class="btn btn-primary"><%= __('New Company') %></a></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm" onclick="location.href = '/results'">
+        <div class="img-results">
+            <div class="cover-white">
+                <div class="mb-4 d-flex">
+                    <h2><%= __('Results') %></h2>
+                    <h2 class="ml-auto"><a href="/anatomies/add" class="btn btn-primary"><%= __('New Result') %></a></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

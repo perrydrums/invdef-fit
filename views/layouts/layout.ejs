@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>New Sails App</title>
+    <title>Algemene Militaire Fitheid</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -14,17 +14,35 @@
   <body>
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-4">
-      <a class="navbar-brand" href="/">FIT</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/results">Testresultaten</a>
-          </li>
-        </ul>
+      <div class="container">
+        <a class="navbar-brand" href="/">AMF</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/anatomies/add"><%= __('Nieuw resultaat') %></a>
+            </li>
+            <li>
+              <a class="nav-link" href="/results"><%= __('Results') %></a>
+            </li>
+            <li>
+              <a class="nav-link" href="/companies"><%= __('Companies') %></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Beheer
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/admin/formulas">Formules</a>
+                <a class="dropdown-item" href="/admin/score">Scores</a>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
