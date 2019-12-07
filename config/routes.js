@@ -17,6 +17,10 @@ module.exports.routes = {
   'POST /results/delete': 'ResultsController.delete',
   'GET /charts/:id': 'ResultsController.charts',
 
+  'GET /companies': 'CompanyController.list',
+  'GET /company/edit/:id': 'CompanyController.edit',
+  'POST /company/update/:id': 'CompanyController.update',
+
   'GET /platoons': 'PlatoonController.list',
   'GET /platoon/:id': 'PlatoonController.overview',
   'GET /platoon/:id/units': 'PlatoonController.units',
