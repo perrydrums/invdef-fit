@@ -29,5 +29,62 @@ module.exports = {
     return res.view('platoon/overview', { platoon, anatomies, averages });
   },
 
+  adminList: async (req, res) => {
+    const platoons = await Platoon.find().populate('company').populate('units');
+    return res.view('admin/platoon/list', { platoons });
+  },
+
+  add: async (req, res) => {
+    const companies = await Company.find();
+    return res.view('admin/platoon/add', { companies });
+  },
+
+  create: (req, res) => {
+    Platoon.create({
+      name: req.body.name,
+      company: req.body.company,
+    }).exec((err) => {
+      if (err) {
+        return res.send(500, {error: 'Database error'});
+      }
+
+      return res.redirect('/admin/platoons');
+    });
+  },
+
+  delete: (req, res) => {
+    Platoon.destroy({id: req.body.id}).exec(async (err) => {
+      if (err) {
+        return res.send(500, {error: 'Database error'});
+      }
+
+      return res.redirect('/admin/platoons');
+    });
+  },
+
+  edit: (req, res) => {
+    Platoon.findOne({id: req.param('id')}).exec(async (err, platoon) => {
+      if (err) {
+        return res.send(500, {error: 'Database error'});
+      }
+      const companies = await Company.find();
+      return res.view('admin/platoon/edit', { platoon, companies });
+    });
+  },
+
+  update: (req, res) => {
+    const id = req.param('id');
+
+    Platoon.update({ id }, {
+      name: req.body.name,
+      company: req.body.company,
+    }).exec((err) => {
+      if (err) {
+        return res.send(500, {error: 'Database error'});
+      }
+      return res.redirect('/admin/platoons');
+    });
+  },
+
 };
 

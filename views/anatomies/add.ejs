@@ -32,12 +32,11 @@
             <div class="form-group">
                 <label for="platoon"><%= __('Platoon') %></label>
                 <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:anatomy:platoon') %>"></div>
-                <input type="text" name="platoon" id="platoon" list="platoons" class="form-control" required/>
-                <datalist id="platoons">
+                <select name="platoon" id="platoon" class="form-control">
                     <% for (let i = 0; i < platoons.length; i ++) { %>
-                        <option value="<%= platoons[i].name %>"></option>
+                        <option value="<%= platoons[i].id %>"><%= platoons[i].name %></option>
                     <% } %>
-                </datalist>
+                </select>
             </div>
         </div>
     </div>

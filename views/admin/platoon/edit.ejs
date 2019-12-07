@@ -1,0 +1,19 @@
+<form method="post" action="/admin/platoons/update/<%= platoon.id %>">
+
+    <div class="form-group">
+        <label for="name"><%= __('Name') %></label>
+        <input type="text" name="name" id="name" class="form-control" value="<%= platoon.name %>" required />
+    </div>
+
+    <div class="form-group">
+        <label for="company"><%= __('Company') %></label>
+        <select name="company" id="company" class="form-control">
+            <% for (let i = 0; i < companies.length; i ++) { %>
+                <option value="<%= companies[i].id %>"><%= companies[i].name %></option>
+            <% } %>
+        </select>
+    </div>
+
+    <input type="submit" value="<%= __('Save') %>" class="btn btn-primary" />
+
+</form>

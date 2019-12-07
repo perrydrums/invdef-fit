@@ -12,12 +12,12 @@ module.exports = {
       if (err) {
         return res.send(500, {error: 'Database error'});
       }
-      return res.view('company/list', { companies });
+      return res.view('admin/company/list', { companies });
     });
   },
 
   add: (req, res) => {
-    return res.view('company/add');
+    return res.view('admin/company/add');
   },
 
   create: (req, res) => {
@@ -28,7 +28,7 @@ module.exports = {
         return res.send(500, {error: 'Database error'});
       }
 
-      return res.redirect('/companies');
+      return res.redirect('/admin/companies');
     });
   },
 
@@ -38,7 +38,7 @@ module.exports = {
         return res.send(500, {error: 'Database error'});
       }
 
-      return res.redirect('/companies');
+      return res.redirect('/admin/companies');
     });
   },
 
@@ -47,7 +47,7 @@ module.exports = {
       if (err) {
         return res.send(500, {error: 'Database error'});
       }
-      return res.view('company/edit', { company });
+      return res.view('admin/company/edit', { company });
     });
   },
 
@@ -60,7 +60,7 @@ module.exports = {
       if (err) {
         return res.send(500, {error: 'Database error'});
       }
-      return res.redirect('/companies');
+      return res.redirect('/admin/companies');
     });
   },
 
