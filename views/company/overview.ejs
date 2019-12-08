@@ -1,3 +1,66 @@
 <h1><%= __('Results of') %> <b><%= company.name %></b></h1>
 <hr class="mb-4">
 
+
+<div class="row mb-4">
+    <div class="col-sm">
+        <h2 class="mb-4"><%= __('Units') %></h2>
+        <div class="units--scrollable">
+            <table class="table table-striped">
+                <% platoons.forEach(platoon => { %>
+                    <tr>
+                        <td>
+                            <div class="d-flex">
+                                <div><%= platoon.name %></div>
+                                <div class="ml-auto">
+                                    <a href="/companies/<%= platoon.company.id %>/platoons/<%= platoon.id %>" class="btn btn-primary"><%= __('Overview') %></a>
+                                    <a href="/companies/<%= platoon.company.id %>/platoons/<%= platoon.id %>/units" class="btn btn-primary"><%= __('Units') %></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                <% }) %>
+            </table>
+        </div>
+
+    </div>
+    <div class="col-sm">
+        <h2 class="mb-4"><%= __('Overview') %></h2>
+        <canvas id="chart"></canvas>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm">
+        <h2 class="mb-4">----</h2>
+    </div>
+    <div class="col-sm">
+        <h2 class="mb-4">----</h2>
+    </div>
+</div>
+
+
+<script>
+  window.addEventListener('load', (event) => {
+
+    let datasets = [];
+
+    <% averages.forEach(a => { %>
+        datasets.push({
+          label: '<%= a.name %>',
+          borderColor: '<%= '#' + md5(a.name).substring(0, 6) %>',
+          data: [
+              <%= (a.fat / 10).toFixed(2) %>,
+              <%= (a.strength).toFixed(2) %>,
+              <%= (a.agility).toFixed(2) %>,
+              <%= (a.coreStability).toFixed(2) %>,
+              <%= (a.endurance).toFixed(2) %>,
+          ]
+        });
+    <% }) %>
+
+    createRadarChart('chart',
+      ['Vet %', 'Military Strength', 'Speed & Agility', 'Core Stability', 'Endurance'],
+      datasets,
+    );
+  });
+</script>

@@ -18,9 +18,26 @@ module.exports = {
   },
 
   overview: async (req, res) => {
+    const md5 = require('md5');
+
     const company = await Company.find({ id: req.param('companyId') });
-    const platoons = await Platoon.find({ company: req.param('companyId') }).populate('units');
-    return res.view('company/overview', { company, platoons });
+    const platoons = await Platoon.find({ company: req.param('companyId') }).populate('units').populate('company');
+    let averages = [];
+
+    for (let i = 0; i < platoons.length; i ++) {
+      let a = {};
+      a['name'] = platoons[i].name;
+
+      a['fat']           = await Anatomies.avg('fat').where({ platoon: platoons[i].id }) || 0;
+      a['coreStability'] = await sails.helpers.getAverageByPlatoon('strength', 'coreStability', platoons[i].id) || 0;
+      a['strength']      = await sails.helpers.getAverageByPlatoon('strength', 'score', platoons[i].id) || 0;
+      a['agility']       = await sails.helpers.getAverageByPlatoon('agility', 'score', platoons[i].id) || 0;
+      a['endurance']     = await sails.helpers.getAverageByPlatoon('agility', 'runScore', platoons[i].id) || 0;
+
+      averages.push(a);
+    }
+
+    return res.view('company/overview', { company, platoons, averages, md5 });
   },
 
   adminList: (req, res) => {

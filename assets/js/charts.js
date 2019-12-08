@@ -6,7 +6,7 @@
  * @param {array} data
  * @param {string} platoon
  */
-const createRadarChart = (element, labels, data, platoon) => {
+const createSingularRadarChart = (element, labels, data, platoon) => {
   const ctx = document.getElementById(element).getContext('2d');
 
   // eslint-disable-next-line no-undef
@@ -28,6 +28,34 @@ const createRadarChart = (element, labels, data, platoon) => {
           data: [3, 3, 3, 3, 3],
         }
       ],
+    },
+    options: {
+      scale: {
+        ticks: {
+          suggestedMin: 0,
+          suggestedMax: 5
+        }
+      }}
+  });
+
+};
+
+/**
+ * Create a chart with multiple datasets.
+ *
+ * @param {string} element
+ * @param {array} labels
+ * @param {array} datasets
+ */
+const createRadarChart = (element, labels, datasets) => {
+  const ctx = document.getElementById(element).getContext('2d');
+
+  // eslint-disable-next-line no-undef
+  new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels,
+      datasets,
     },
     options: {
       scale: {
