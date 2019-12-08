@@ -18,7 +18,7 @@ module.exports = {
 
     let averages = {};
 
-    averages['fat'] = await Anatomies.avg('fat').where({ platoon: req.params.id }) || 0;
+    averages['fat'] = await Anatomies.avg('fat').where({ platoon: req.param('platoonId') }) || 0;
     averages['coreStability'] = await sails.helpers.getAverageByPlatoon('strength', 'coreStability', platoon.id) || 0;
     averages['strength'] = await sails.helpers.getAverageByPlatoon('strength', 'score', platoon.id) || 0;
     averages['agility'] = await sails.helpers.getAverageByPlatoon('agility', 'score', platoon.id) || 0;
