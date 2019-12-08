@@ -17,9 +17,11 @@ module.exports.routes = {
   'POST /results/delete': 'ResultsController.delete',
   'GET /charts/:id': 'ResultsController.charts',
 
-  'GET /platoons': 'PlatoonController.list',
-  'GET /platoon/:id': 'PlatoonController.overview',
-  'GET /platoon/:id/units': 'PlatoonController.units',
+  'GET /companies': 'CompanyController.list',
+  'GET /companies/:companyId': 'CompanyController.overview',
+  'GET /companies/:companyId/platoons': 'CompanyController.platoons',
+  'GET /companies/:companyId/platoons/:platoonId': 'PlatoonController.overview',
+  'GET /companies/:companyId/platoons/:platoonId/units': 'PlatoonController.units',
 
   'GET /anatomies/edit/:id': 'AnatomiesController.edit',
   'POST /anatomies/update/:id': 'AnatomiesController.update',
@@ -32,7 +34,7 @@ module.exports.routes = {
   'GET /agility/edit/:id': 'AgilityController.edit',
   'POST /agility/update/:id': 'AgilityController.update',
 
-  'GET /admin/companies': 'CompanyController.list',
+  'GET /admin/companies': 'CompanyController.adminList',
   'GET /admin/companies/add': 'CompanyController.add',
   'GET /admin/companies/edit/:id': 'CompanyController.edit',
   'POST /admin/companies/update/:id': 'CompanyController.update',

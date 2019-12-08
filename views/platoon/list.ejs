@@ -5,8 +5,8 @@
         <tr>
             <td><%= platoon.name %></td>
             <td>
-                <a href="/platoon/<%= platoon.id %>" class="btn btn-primary"><%= __('Overview') %></a>
-                <a href="/platoon/<%= platoon.id %>/units" class="btn btn-primary"><%= __('Units') %></a>
+                <a href="/companies/<%= platoon.company.id %>/platoons/<%= platoon.id %>" class="btn btn-primary"><%= __('Overview') %></a>
+                <a href="/companies/<%= platoon.company.id %>/platoons/<%= platoon.id %>/units" class="btn btn-primary"><%= __('Units') %></a>
             </td>
         </tr>
 

@@ -7,24 +7,22 @@
 
 module.exports = {
 
-  list: async (req, res) => {
-    const platoons = await Platoon.find();
-    return res.view('platoon/list', { platoons });
-  },
-
   units: async (req, res) => {
-    const anatomies = await Anatomies.find({ platoon: req.params.id }).populate('platoon');
+    const anatomies = await Anatomies.find({ platoon: req.param('platoonId') }).populate('platoon');
     return res.view('platoon/units', { anatomies });
   },
 
   overview: async (req, res) => {
-    const platoon = await Platoon.findOne({ id: req.params.id });
-    const anatomies = await Anatomies.find({ platoon: req.params.id });
+    const platoon = await Platoon.findOne({ id: req.param('platoonId') });
+    const anatomies = await Anatomies.find({ platoon: req.param('platoonId') });
 
     let averages = {};
 
-    averages['fat'] = await Anatomies.avg('fat').where({ platoon: req.params.id });
-    averages['coreStability'] = await sails.helpers.getAverageByPlatoon('strength', 'coreStability', platoon.id);
+    averages['fat'] = await Anatomies.avg('fat').where({ platoon: req.params.id }) || 0;
+    averages['coreStability'] = await sails.helpers.getAverageByPlatoon('strength', 'coreStability', platoon.id) || 0;
+    averages['strength'] = await sails.helpers.getAverageByPlatoon('strength', 'score', platoon.id) || 0;
+    averages['agility'] = await sails.helpers.getAverageByPlatoon('agility', 'score', platoon.id) || 0;
+    averages['endurance'] = await sails.helpers.getAverageByPlatoon('agility', 'runScore', platoon.id) || 0;
 
     return res.view('platoon/overview', { platoon, anatomies, averages });
   },

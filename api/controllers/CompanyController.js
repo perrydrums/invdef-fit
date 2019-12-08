@@ -7,7 +7,23 @@
 
 module.exports = {
 
-  list: (req, res) => {
+  list: async (req, res) => {
+    const companies = await Company.find();
+    return res.view('company/list', { companies });
+  },
+
+  platoons: async (req, res) => {
+    const platoons = await Platoon.find({ company: req.param('companyId') }).populate('company').populate('units');
+    return res.view('platoon/list', { platoons });
+  },
+
+  overview: async (req, res) => {
+    const company = await Company.find({ id: req.param('companyId') });
+    const platoons = await Platoon.find({ company: req.param('companyId') }).populate('units');
+    return res.view('company/overview', { company, platoons });
+  },
+
+  adminList: (req, res) => {
     Company.find({}).exec((err, companies) => {
       if (err) {
         return res.send(500, {error: 'Database error'});
