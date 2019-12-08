@@ -48,6 +48,7 @@
         datasets.push({
           label: '<%= a.name %>',
           borderColor: '<%= '#' + md5(a.name).substring(0, 6) %>',
+          backgroundColor: 'rgba(0, 0, 0, 0)',
           data: [
               <%= (a.fat / 10).toFixed(2) %>,
               <%= (a.strength).toFixed(2) %>,
