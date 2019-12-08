@@ -19,14 +19,20 @@ module.exports = {
       return 1;
     }
 
-    const s = await Score.findOne({ field: inputs.field });
+    try {
+      const s = await Score.findOne({ field: inputs.field });
 
-    if (!s) { return 0; }
+      if (!s) { return 0; }
 
-    let score = (inputs.result / s.max * 5).toFixed(1);
-    if (score > 5) { score = 5; }
-    if (score < 1) { score = 1; }
-    return score;
+      let score = (inputs.result / s.max * 5).toFixed(1);
+      if (score > 5) { score = 5; }
+      if (score < 1) { score = 1; }
+      return score;
+    }
+    catch (e) {
+      return 0;
+    }
+
   }
 
 };
