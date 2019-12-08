@@ -1,0 +1,37 @@
+@import 'variables/colors.scss';
+
+.img-company {
+  background-image: url('/images/company.png');
+  background-repeat: no-repeat;
+  border-bottom: 1px solid $light;
+}
+
+.img-results {
+  background-image: url('/images/results.png');
+  background-repeat: no-repeat;
+  border-bottom: 1px solid $light;
+}
+
+.img-settings {
+  background-image: url('/images/settings.png');
+  background-repeat: no-repeat;
+  border-bottom: 1px solid $light;
+}
+
+.img-platoon {
+  background-image: url('/images/platoon.png');
+  background-repeat: no-repeat;
+  border-bottom: 1px solid $light;
+}
+
+.img-score {
+  background-image: url('/images/score.png');
+  background-repeat: no-repeat;
+  border-bottom: 1px solid $light;
+}
+
+.img-formula {
+  background-image: url('/images/formula.png');
+  background-repeat: no-repeat;
+  border-bottom: 1px solid $light;
+}

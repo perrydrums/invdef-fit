@@ -78,8 +78,9 @@
 	"Eenheden": "Eenheden",
 	"New company": "Nieuwe compagnie",
 	"New platoon": "Nieuw peloton",
-	"in seconds": "in seconds",
-	"2600m run in seconds": "2600m run in seconds",
+	"in seconds": "in seconde",
+	"2600m run in seconds": "2600m run in seconde",
 	"2600m run": "2600m run",
-	"Settings": "Settings"
+	"Settings": "Beheer",
+	"Scores": "Scores"
 }

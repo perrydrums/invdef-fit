@@ -34,6 +34,8 @@ module.exports.routes = {
   'GET /agility/edit/:id': 'AgilityController.edit',
   'POST /agility/update/:id': 'AgilityController.update',
 
+  'GET /admin': { view: 'admin/index' },
+
   'GET /admin/companies': 'CompanyController.adminList',
   'GET /admin/companies/add': 'CompanyController.add',
   'GET /admin/companies/edit/:id': 'CompanyController.edit',
