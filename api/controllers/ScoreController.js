@@ -8,11 +8,13 @@
 module.exports = {
 
   list: (req, res) => {
+    const moment = require('moment');
+
     Score.find({}).exec((err, scores) => {
       if (err) {
         return res.send(500, {error: 'Database error'});
       }
-      return res.view('admin/score/list', { scores });
+      return res.view('admin/score/list', { scores, moment });
     });
   },
 

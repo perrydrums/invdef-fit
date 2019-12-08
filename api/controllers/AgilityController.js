@@ -20,8 +20,7 @@ module.exports = {
     const jumpScore = await sails.helpers.score('jump', req.body.jumpHeight);
     const agilityScore = await sails.helpers.score('agility', parseFloat(req.body.agility1) + parseFloat(req.body.agility2));
     const sprintScore = await sails.helpers.score('sprint', parseFloat(req.body.sprint1) + parseFloat(req.body.sprint2));
-    const runScore = 0;
-    // const runScore = await sails.helpers.score('run', req.body.run);
+    const runScore = await sails.helpers.score('run', req.body.run);
     const score = ((parseFloat(jumpScore) + parseFloat(agilityScore) + parseFloat(sprintScore)) / 3).toFixed(1);
 
     Agility.create({
@@ -78,8 +77,7 @@ module.exports = {
     const jumpScore = await sails.helpers.score('jump', req.body.jumpHeight);
     const agilityScore = await sails.helpers.score('agility', parseFloat(req.body.agility1) + parseFloat(req.body.agility2));
     const sprintScore = await sails.helpers.score('sprint', parseFloat(req.body.sprint1) + parseFloat(req.body.sprint2));
-    const runScore = 0;
-    // const runScore = await sails.helpers.score('run', req.body.run);
+    const runScore = await sails.helpers.score('run', req.body.run);
     const score = ((parseFloat(jumpScore) + parseFloat(agilityScore) + parseFloat(sprintScore)) / 3).toFixed(1);
 
     Agility.update({ id: req.param('id') }, {

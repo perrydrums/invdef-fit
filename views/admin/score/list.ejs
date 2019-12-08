@@ -14,7 +14,7 @@
 
             <tr>
                 <td><%= score.field %></td>
-                <td><%= score.max %></td>
+                <td><%= (score.field === 'run') ? moment.utc(score.max * 1000).format('mm:ss') : score.max %></td>
                 <td>
                     <a href="/admin/score/edit/<%= score.id %>" class="btn btn-primary"><%= __('Edit') %></a>
                     <form class="d-inline" action="/score/delete" method="post">

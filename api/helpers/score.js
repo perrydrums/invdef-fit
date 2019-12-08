@@ -15,10 +15,6 @@ module.exports = {
 
   fn: async (inputs) => {
 
-    if (inputs.field === 'run') {
-      return 1;
-    }
-
     try {
       const s = await Score.findOne({ field: inputs.field });
 

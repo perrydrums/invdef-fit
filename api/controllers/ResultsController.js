@@ -15,6 +15,7 @@ module.exports = {
   },
 
   view: async (req, res) => {
+    const moment = require('moment');
     const anatomy = await Anatomies.findOne({ id: req.param('id') }).populate('platoon');
     if (anatomy) {
       let results = {};
@@ -23,7 +24,7 @@ module.exports = {
       results['strength'] = await Strength.findOne({ anatomyId: anatomy.id }).catch(() => { return null; });
       results['agility'] = await Agility.findOne({ anatomyId: anatomy.id }).catch(() => { return null; });
 
-      return res.view('result', { ...results });
+      return res.view('result', { ...results, moment });
     }
   },
 

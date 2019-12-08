@@ -102,8 +102,8 @@
                     <td><b><%= agility.score %></b></td>
                 </tr>
                 <tr>
-                    <td><%= __('2600m loop') %></td>
-                    <td><%= agility.run %></td>
+                    <td><%= __('2600m run') %></td>
+                    <td><%= moment.utc(agility.run * 1000).format('mm:ss') %></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -181,6 +181,8 @@
     </div>
 </div>
 
+<% if (anatomy && strength && agility) { %>
+
 <script>
   window.addEventListener('load', (event) => {
     createSingularRadarChart('chart',
@@ -196,3 +198,5 @@
     );
   });
 </script>
+
+<% } %>

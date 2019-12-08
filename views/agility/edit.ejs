@@ -29,8 +29,8 @@
             </div>
 
             <div class="form-group">
-                <label for="run"><%= __('2600m loop') %></label>
-                <input type="time" name="run" class="form-control" id="run" value="<%= agility.run %>" required/>
+                <label for="run"><%= __('2600m run in seconds') %></label>
+                <input type="number" name="run" step="1" class="form-control" id="run" value="<%= agility.run %>" required/>
             </div>
         </div>
 

@@ -44,7 +44,7 @@ module.exports = {
       columnType: 'FLOAT'
     },
     run: {
-      type: 'string',
+      type: 'number',
     },
     runScore: {
       type: 'number',
