@@ -32,12 +32,11 @@
             <div class="form-group">
                 <label for="platoon"><%= __('Platoon') %></label>
                 <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:anatomy:platoon') %>"></div>
-                <input type="text" name="platoon" id="platoon" list="platoons" class="form-control" value="<%= anatomy.platoon.name %>" required/>
-                <datalist id="platoons">
+                <select name="platoon" id="platoon" class="form-control">
                     <% for (let i = 0; i < platoons.length; i ++) { %>
-                        <option value="<%= platoons[i].name %>"></option>
+                        <option value="<%= platoons[i].id %>"><%= platoons[i].name %></option>
                     <% } %>
-                </datalist>
+                </select>
             </div>
         </div>
     </div>
@@ -66,6 +65,7 @@
         <div class="col-sm">
             <div class="form-group">
                 <label for="bmi"><%= __('BMI') %></label>
+                <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:formulas:readonly') %>"></div>
                 <input type="number" name="bmi" class="form-control" step="0.01" id="bmi" value="<%= anatomy.bmi %>" readonly />
             </div>
         </div>

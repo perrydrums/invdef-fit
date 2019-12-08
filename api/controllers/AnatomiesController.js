@@ -13,17 +13,11 @@ module.exports = {
   },
 
   create: async (req, res) => {
-    // Check if the Platoon already exists.
-    let platoon = await Platoon.findOne({ name: req.body.platoon });
-    if (!platoon) {
-      platoon = await Platoon.create({ name: req.body.platoon }).fetch();
-    }
-
     Anatomies.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       unit: req.body.unit,
-      platoon: platoon.id,
+      platoon: req.body.platoon,
       peoplesoft: req.body.peoplesoft,
       height: req.body.height,
       weight: req.body.weight,
@@ -55,17 +49,11 @@ module.exports = {
   update: async (req, res) => {
     const id = req.param('id');
 
-    // Check if the Platoon already exists.
-    let platoon = await Platoon.findOne({ name: req.body.platoon });
-    if (!platoon) {
-      platoon = await Platoon.create({ name: req.body.platoon }).fetch();
-    }
-
     Anatomies.update({ id }, {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       unit: req.body.unit,
-      platoon: platoon.id,
+      platoon: req.body.platoon,
       peoplesoft: req.body.peoplesoft,
       height: req.body.height,
       weight: req.body.weight,

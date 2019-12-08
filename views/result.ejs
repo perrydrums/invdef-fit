@@ -20,7 +20,7 @@
             </tr>
             <tr>
                 <td><%= __('Platoon') %></td>
-                <td><%= anatomy.platoon.name %></td>
+                <td><%= anatomy.platoon ? anatomy.platoon.name : '' %></td>
             </tr>
             <tr>
                 <td></td>
@@ -192,7 +192,7 @@
           <%= strength.coreStabilityScore %>,
           <%= agility.runScore %>,
       ],
-      '<%= anatomy.platoon.name %>'
+      '<%= anatomy.firstName %>'
     );
   });
 </script>
