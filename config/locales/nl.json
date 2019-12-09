@@ -1,8 +1,8 @@
 {
 	"info:formulas:field": "Kies het veld dat gevuld wordt door de formule.",
-	"info:formulas:formula": "Vul hier de Excel formule in.",
+	"info:formulas:formula": "Vul hier de formule in.",
 	"info:formulas:readonly": "De waarde van dit veld wordt berekend door een formule.",
-	"info:anatomy:platoon": "Kies een peloton uit de lijst of voeg een nieuwe toe door de naam in te typen.",
+	"info:anatomy:platoon": "Kies een peloton uit de lijst of voeg een nieuwe toe in het beheeroverzicht.",
 	"Persona": "Persoonsgegevens",
 	"Body": "Lichaam",
 	"New result": "Nieuw resultaat",
@@ -65,10 +65,10 @@
 	"Overview": "Overzicht",
 	"2600m loop": "2600m loop",
 	"Nieuwe score": "Nieuwe score",
-	"Maximum amount": "Maximum amount",
-	"info:score:field": "info:score:field",
+	"Maximum amount": "Maximum resultaat",
+	"info:score:field": "Kies het veld waarvan de score moet worden berekend.",
 	"Pull Up": "Pull Up",
-	"info:score:max": "info:score:max",
+	"info:score:max": "Typ hier het resultaat dat resulteert in een score van 5.",
 	"Recent results": "Recente resultaten",
 	"New Result": "Nieuw resultaat",
 	"Companies": "Compagnies",
@@ -82,5 +82,7 @@
 	"2600m run in seconds": "2600m run in seconde",
 	"2600m run": "2600m run",
 	"Settings": "Beheer",
-	"Scores": "Scores"
+	"Scores": "Scores",
+	"New score": "Nieuwe score",
+	"Platoons in ": "Pelotons in "
 }
