@@ -16,6 +16,8 @@ module.exports = {
 
   view: async (req, res) => {
     const moment = require('moment');
+    const md5 = require('md5');
+
     const anatomy = await Anatomies.findOne({ id: req.param('id') }).populate('platoon');
     if (anatomy) {
       let results = {};
@@ -24,7 +26,19 @@ module.exports = {
       results['strength'] = await Strength.findOne({ anatomyId: anatomy.id }).catch(() => { return null; });
       results['agility'] = await Agility.findOne({ anatomyId: anatomy.id }).catch(() => { return null; });
 
-      return res.view('result', { ...results, moment });
+      const platoon = await Platoon.findOne({ id: anatomy.platoon.id }).catch(() => { return null; });
+      let averages = {};
+
+      if (platoon) {
+        averages['name']          = platoon.name;
+        averages['fat']           = await Anatomies.avg('fat').where({ platoon: platoon.id }) || 0;
+        averages['coreStability'] = await sails.helpers.getAverageByPlatoon('strength', 'coreStability', platoon.id) || 0;
+        averages['strength']      = await sails.helpers.getAverageByPlatoon('strength', 'score', platoon.id) || 0;
+        averages['agility']       = await sails.helpers.getAverageByPlatoon('agility', 'score', platoon.id) || 0;
+        averages['endurance']     = await sails.helpers.getAverageByPlatoon('agility', 'runScore', platoon.id) || 0;
+      }
+
+      return res.view('result', { ...results, moment, averages, md5 });
     }
   },
 

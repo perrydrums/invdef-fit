@@ -185,16 +185,49 @@
 
 <script>
   window.addEventListener('load', (event) => {
-    createSingularRadarChart('chart',
+
+    let datasets = [];
+
+    <% if (averages.name) { %>
+
+    datasets.push({
+      label: '<%= averages.name %>',
+      borderColor: '<%= '#' + md5(averages.name).substring(0, 6) %>',
+      backgroundColor: 'rgba(0, 0, 0, 0)',
+      data: [
+          <%= (averages.fat / 10).toFixed(2) %>,
+          <%= (averages.strength).toFixed(2) %>,
+          <%= (averages.agility).toFixed(2) %>,
+          <%= (averages.coreStability).toFixed(2) %>,
+          <%= (averages.endurance).toFixed(2) %>,
+      ]
+    });
+
+    <% } %>
+
+    datasets.push({
+      label: 'Richtlijn',
+      backgroundColor: 'rgba(0, 0, 0, 0)',
+      borderColor: 'rgba(0, 255, 0, 0.5)',
+      data: [3, 3, 3, 3, 3],
+    });
+
+    datasets.push({
+        label: '<%= anatomy.firstName %>',
+        backgroundColor: 'rgba(255, 99, 132, 0.3)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [
+            <%= anatomy.fat / 10 %>,
+            <%= strength.score %>,
+            <%= agility.score %>,
+            <%= strength.coreStabilityScore %>,
+            <%= agility.runScore %>,
+        ],
+    });
+
+    createRadarChart('chart',
       ['Vet %', 'Military Strength', 'Speed & Agility', 'Core Stability', 'Endurance'],
-      [
-          <%= anatomy.fat / 10 %>,
-          <%= strength.score %>,
-          <%= agility.score %>,
-          <%= strength.coreStabilityScore %>,
-          <%= agility.runScore %>,
-      ],
-      '<%= anatomy.firstName %>'
+      datasets,
     );
   });
 </script>
