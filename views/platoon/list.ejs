@@ -1,14 +1,23 @@
 <h1 class="display-4"><%= __('Platoons') %></h1>
 <table class="table table-striped">
+    <thead>
+    <tr>
+        <td>Naam</td>
+        <td>Aantal personen</td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
     <% platoons.forEach(platoon => { %>
-
         <tr>
             <td><%= platoon.name %></td>
+            <td><%= platoon.units.length %></td>
             <td>
                 <a href="/companies/<%= platoon.company.id %>/platoons/<%= platoon.id %>" class="btn btn-primary"><%= __('Overview') %></a>
                 <a href="/companies/<%= platoon.company.id %>/platoons/<%= platoon.id %>/units" class="btn btn-primary"><%= __('Units') %></a>
             </td>
         </tr>
-
     <% }) %>
+    </tbody>
+
 </table>
