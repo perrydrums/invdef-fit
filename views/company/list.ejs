@@ -2,13 +2,23 @@
 <table class="table table-striped">
     <% companies.forEach(company => { %>
 
+        <thead>
+        <tr>
+            <td>Naam</td>
+            <td>Aantal pelotons</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
         <tr>
             <td><%= company.name %></td>
+            <td><%= company.platoons.length %></td>
             <td>
                 <a href="/companies/<%= company.id %>" class="btn btn-primary"><%= __('Overview') %></a>
                 <a href="/companies/<%= company.id %>/platoons" class="btn btn-primary"><%= __('Platoons') %></a>
             </td>
         </tr>
+        </tbody>
 
     <% }) %>
 </table>
