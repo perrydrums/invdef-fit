@@ -34,7 +34,7 @@
                 <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:anatomy:platoon') %>"></div>
                 <select name="platoon" id="platoon" class="form-control">
                     <% for (let i = 0; i < platoons.length; i ++) { %>
-                        <option value="<%= platoons[i].id %>"><%= platoons[i].name %></option>
+                        <option value="<%= platoons[i].id %>" <%= anatomy.platoon.id === platoons[i].id ? 'selected' : ''%>><%= platoons[i].name %></option>
                     <% } %>
                 </select>
             </div>

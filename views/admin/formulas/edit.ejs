@@ -7,8 +7,7 @@
         <label for="field"><%= __('Field') %></label>
         <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:formulas:field') %>"></div>
         <select name="field" id="field" class="form-control" required>
-            <option value="bmi"><%= __('BMI') %></option>
-            <option value="coreStability"><%= __('Core Stability') %></option>
+            <option <%= formula.field === 'bmi' ? 'selected' : ''%> value="bmi"><%= __('BMI') %></option>
         </select>
     </div>
 

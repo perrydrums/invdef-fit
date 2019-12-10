@@ -12,7 +12,7 @@
         <label for="company"><%= __('Company') %></label>
         <select name="company" id="company" class="form-control">
             <% for (let i = 0; i < companies.length; i ++) { %>
-                <option value="<%= companies[i].id %>"><%= companies[i].name %></option>
+                <option <%= platoon.company === companies[i].id ? 'selected' : ''%> value="<%= companies[i].id %>"><%= companies[i].name %></option>
             <% } %>
         </select>
     </div>

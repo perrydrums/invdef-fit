@@ -8,15 +8,15 @@
             <div class="form-group">
                 <label for="field"><%= __('Field') %></label>
                 <div class="tooltip-icon" data-toggle="tooltip" data-placement="right" title="<%= __('info:score:field') %>"></div>
-                <select name="field" id="field" class="form-control" value="<%= score.field %>" required>
-                    <option value="sprint"><%= __('Sprint') %></option>
-                    <option value="agility"><%= __('Agility') %></option>
-                    <option value="jump"><%= __('Jump test') %></option>
-                    <option value="run"><%= __('2600m loop') %></option>
-                    <option value="shoulderPress"><%= __('Shoulder press') %></option>
-                    <option value="squats"><%= __('Squats') %></option>
-                    <option value="pullUp"><%= __('Pull Up') %></option>
-                    <option value="coreStability"><%= __('Core Stability') %></option>
+                <select name="field" id="field" class="form-control" required>
+                    <option value="sprint" <%= score.field === 'sprint' ? 'selected' : ''%>><%= __('Sprint') %></option>
+                    <option value="agility" <%= score.field === 'agility' ? 'selected' : ''%>><%= __('Agility') %></option>
+                    <option value="jump" <%= score.field === 'jump' ? 'selected' : ''%>><%= __('Jump test') %></option>
+                    <option value="run" <%= score.field === 'run' ? 'selected' : ''%>><%= __('2600m loop') %></option>
+                    <option value="shoulderPress" <%= score.field === 'shoulderPress' ? 'selected' : ''%>><%= __('Shoulder press') %></option>
+                    <option value="squats" <%= score.field === 'squats' ? 'selected' : ''%>><%= __('Squats') %></option>
+                    <option value="pullUp" <%= score.field === 'pullUp' ? 'selected' : ''%>><%= __('Pull Up') %></option>
+                    <option value="coreStability" <%= score.field === 'coreStability' ? 'selected' : ''%>><%= __('Core Stability') %></option>
                 </select>
             </div>
         </div>
