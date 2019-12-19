@@ -32,7 +32,6 @@ mounts:
 
 hooks:
   build: |
-    npm install sails -g
     npm install
   deploy: |
     node app.js NODE_ENV=production
